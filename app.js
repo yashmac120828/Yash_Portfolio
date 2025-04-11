@@ -11,7 +11,21 @@ let c1 = document.querySelectorAll(".c1");
 if (themeButton) {
     themeButton.addEventListener('click', toggleTheme);
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.right ul');
 
+    hamburger.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.right a').forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+        });
+    });
+});
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
