@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <style>
-        :root {
+          :root {
             --primary: #650aac;
             --primary-light: #8a2be2;
             --secondary: #b2679a;
@@ -50,7 +50,150 @@
             background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
             color: var(--text-light);
         }
+/* ===== Navigation Styles ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--nav-bg-dark);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
 
+[data-theme="light"] nav {
+    background-color: var(--nav-bg-light);
+}
+
+nav .left {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    --text-fill-color: transparent;
+}
+
+nav .right ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+nav .right ul a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+nav .right ul a:hover {
+    color: var(--primary-light);
+}
+
+nav .right ul li {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+nav .right ul li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-light);
+    transition: var(--transition);
+}
+
+nav .right ul li:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    z-index: 200;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: var(--transition);
+}
+
+/* Mobile Navigation Menu Styles */
+@media (max-width: 768px) {
+    nav {
+        padding: 1.2rem 1rem;
+    }
+
+    nav .left {
+        font-size: 1.5rem;
+        z-index: 200;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav .right {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--nav-bg-dark);
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+    }
+
+    [data-theme="light"] nav .right {
+        background-color: var(--nav-bg-light);
+    }
+
+    nav .right.active {
+        right: 0;
+    }
+
+    nav .right ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 2rem;
+    }
+
+    nav .right ul li {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav .right ul a {
+        width: 100%;
+    }
+}
         /* Container for better centering */
         .container {
             width: 100%;
@@ -73,7 +216,7 @@
         /* Theme Toggle Button Styling */
         .theme {
             position: fixed;
-            top: 6rem;
+            top: 1.5rem;
             right: 1.5rem;
             width: 3.5rem;
             height: 3.5rem;
@@ -89,6 +232,7 @@
             z-index: 100;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            margin-top:50px;
         }
 
         .theme:hover {
@@ -371,8 +515,8 @@
 <body>
     <header>
         <nav>
-            <div class="left">Internship</div>
-            <div class="hamburger">
+            <div class="left">Certifications</div>
+            <div class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -391,10 +535,10 @@
                     <a href="index.html">
                         <li>Skills</li>
                     </a>
-                    <a href="Certifications.html">
+                    <a href="Certifications.html" aria-current="page">
                         <li>Certifications</li>
                     </a>
-                    <a href="#Internship">
+                    <a href="Internship.html">
                         <li>Internship</li>
                     </a>
                     <a href="index.html">
@@ -413,6 +557,7 @@
             </div>
         </nav>
     </header>
+    
     
     <main>
         <button class="theme"><i class="fa-solid fa-moon"></i></button>
@@ -486,8 +631,8 @@
     </main>
     
     <script>
-        // Theme Toggle
-        const themeButton = document.querySelector(".theme");
+         // Theme Toggle
+         const themeButton = document.querySelector(".theme");
         let currentTheme = localStorage.getItem('theme') || 'light';
         
         // Apply saved theme on page load
@@ -505,8 +650,10 @@
         function updateThemeButton() {
             if (currentTheme === 'dark') {
                 themeButton.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                themeButton.setAttribute('aria-label', 'Switch to light theme');
             } else {
                 themeButton.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                themeButton.setAttribute('aria-label', 'Switch to dark theme');
             }
         }
         
@@ -514,41 +661,60 @@
         const hamburger = document.querySelector('.hamburger');
         const navRight = document.querySelector('nav .right');
         
-        if (hamburger) {
-            hamburger.addEventListener('click', () => {
-                navRight.classList.toggle('active');
-                
-                // Animate hamburger to X
-                const spans = hamburger.querySelectorAll('span');
-                
-                if (navRight.classList.contains('active')) {
-                    spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
-                    spans[1].style.opacity = '0';
-                    spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
-                } else {
-                    spans[0].style.transform = 'none';
-                    spans[1].style.opacity = '1';
-                    spans[2].style.transform = 'none';
-                }
-            });
-        }
+        hamburger.addEventListener('click', () => {
+            navRight.classList.toggle('active');
+            
+            // Update ARIA attributes
+            const isExpanded = navRight.classList.contains('active');
+            hamburger.setAttribute('aria-expanded', isExpanded);
+            
+            // Animate hamburger to X
+            const spans = hamburger.querySelectorAll('span');
+            
+            if (isExpanded) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
         
         // Close mobile menu when clicking a link
         const navLinks = document.querySelectorAll('nav .right ul a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (navRight && navRight.classList.contains('active')) {
+                if (navRight.classList.contains('active')) {
                     navRight.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', false);
                     
-                    if (hamburger) {
-                        const spans = hamburger.querySelectorAll('span');
-                        spans[0].style.transform = 'none';
-                        spans[1].style.opacity = '1';
-                        spans[2].style.transform = 'none';
-                    }
+                    const spans = hamburger.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
                 }
             });
         });
+        // Animation for certification cards
+const certificationCards = document.querySelectorAll('.certification-card');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+certificationCards.forEach(card => {
+    observer.observe(card);
+});
+        
+        
     </script>
 </body>
 </html>

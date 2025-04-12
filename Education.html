@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
     <style>
+        /* ===== Variables ===== */
         :root {
             --primary: #650aac;
             --primary-light: #8a2be2;
@@ -28,6 +28,7 @@
             --shadow-colored: 0 8px 25px rgba(101, 10, 172, 0.3);
         }
 
+        /* ===== Base Styles ===== */
         * {
             margin: 0;
             padding: 0;
@@ -35,7 +36,7 @@
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
         }
-
+        
         body {
             background-color: var(--light-bg, #fff);
             color: var(--text-dark);
@@ -50,7 +51,6 @@
             background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
             color: var(--text-light);
         }
-
 
         /* Container for better centering */
         .container {
@@ -68,10 +68,129 @@
             position: relative;
             width: 100%;
             padding-bottom: 4rem;
-            margin-top: 80px; /* Added to account for fixed nav */
+            margin-top: 80px; /* For fixed nav */
         }
 
-        /* Roadmap Timeline Styles */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== Navigation Styles ===== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--nav-bg-dark);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+
+        [data-theme="light"] nav {
+            background-color: var(--nav-bg-light);
+        }
+
+        nav .left {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            --text-fill-color: transparent;
+        }
+
+        nav .right ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        nav .right ul a {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        nav .right ul a:hover {
+            color: var(--primary-light);
+        }
+
+        nav .right ul li {
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav .right ul li::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-light);
+            transition: var(--transition);
+        }
+
+        nav .right ul li:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            z-index: 200;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        /* Theme Toggle Button */
+        .theme {
+            position: fixed;
+            top: 6rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            border-radius: 50%;
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: var(--shadow-colored);
+            transition: var(--transition);
+        }
+
+        .theme:hover {
+            transform: scale(1.1);
+        }
+
+        /* ===== Roadmap Timeline Styles ===== */
         .timeline {
             position: relative;
             margin: 5rem auto;
@@ -89,7 +208,6 @@
             width: 6px;
             background: linear-gradient(to bottom, var(--secondary), var(--primary));
             border-radius: 30px;
-           
             box-shadow: var(--shadow-colored);
         }
 
@@ -191,7 +309,7 @@
         [data-theme="light"] .timeline-content h2 {
             color: var(--primary);
         }
-
+        
         .timeline-content h2::after {
             content: '';
             position: absolute;
@@ -231,230 +349,11 @@
             color: var(--primary);
         }
 
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .timeline {
-                width: 90%;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .timeline {
-                padding: 2rem 1rem;
-            }
-
-            .timeline-content {
-                padding: 2rem;
-            }
-
-            nav .right ul {
-                gap: 0.3rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 1.2rem 1rem;
-            }
-
-            nav .left {
-                font-size: 1.5rem;
-                z-index: 200;
-            }
-
-            nav .right ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            nav .right ul li {
-                margin: 0.5rem 0.6rem;
-                font-size: 0.9rem;
-            }
-
-            .timeline::before {
-                left: 1.5rem;
-            }
-
-            .timeline-item {
-                flex-direction: column;
-                margin: 3rem 0;
-            }
-
-            .timeline-icon {
-                width: 3.5rem;
-                height: 3.5rem;
-                font-size: 1.2rem;
-                left: 0;
-                top: 0;
-            }
-
-            .timeline-content {
-                margin-left: 5rem;
-                padding: 1.5rem;
-                width: calc(100% - 5rem);
-            }
-
-            .timeline-content h2 {
-                font-size: 1.5rem;
-            }
-
-            .theme {
-                top: 1rem;
-                right: 1rem;
-                height: 3rem;
-                width: 3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .timeline {
-                width: 95%;
-                margin-top: 5rem;
-            }
-
-            .timeline::before {
-                left: 1rem;
-                width: 4px;
-            }
-
-            .timeline-icon {
-                width: 2.7rem;
-                height: 2.7rem;
-                font-size: 1rem;
-                left: 0;
-            }
-
-            .timeline-content {
-                margin-left: 3.5rem;
-                padding: 1.2rem;
-                border-radius: 1rem;
-                width: calc(100% - 3.5rem);
-            }
-
-            .timeline-content h2 {
-                font-size: 1.3rem;
-            }
-
-            .timeline-content p {
-                font-size: 0.9rem;
-                line-height: 1.6;
-            }
-            
-            .info-grid {
-                grid-template-columns: 1fr;
-                gap: 0.2rem;
-            }
-        }
-
-        /* Mobile Navigation Toggle */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 21px;
-            cursor: pointer;
-            z-index: 200;
-            position: relative;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: white;
-            border-radius: 3px;
-            transition: var(--transition);
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            nav .right {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                height: 100vh;
-                background-color: var(--nav-bg-dark);
-                transition: var(--transition);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 100;
-            }
-
-            nav .right.active {
-                right: 0;
-            }
-
-            nav .right ul {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                padding: 2rem;
-            }
-
-            nav .right ul li {
-                margin: 1rem 0;
-                font-size: 1.2rem;
-                width: 100%;
-                text-align: center;
-            }
-            
-            nav .right ul a {
-                width: 100%;
-            }
-        }
-
-        /* Decorative Elements */
-        .decorative-circle {
-            position: fixed;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--primary-light), transparent);
-            opacity: 0.1;
-            z-index: -1;
-        }
-
-        .circle1 {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            left: -150px;
-        }
-
-        .circle2 {
-            width: 500px;
-            height: 500px;
-            bottom: 5%;
-            right: -250px;
-        }
-
-        /* Fancy Animation for Timeline Items */
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(178, 103, 154, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(178, 103, 154, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(178, 103, 154, 0);
-            }
-        }
-
-        .timeline-icon {
-            animation: pulse 2s infinite;
-        }
-
-        /* Extra fancy touches */
+        /* Year Badge */
         .year-badge {
             position: absolute;
-            
             right: 20px;
+            top: 20px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 0.4rem 1.2rem;
@@ -508,7 +407,156 @@
             color: #ddd;
         }
 
+        /* Decorative Elements */
+        .decorative-circle {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-light), transparent);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .circle1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: -150px;
+        }
+
+        .circle2 {
+            width: 500px;
+            height: 500px;
+            bottom: 5%;
+            right: -250px;
+        }
+
+        /* Animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(178, 103, 154, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(178, 103, 154, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(178, 103, 154, 0);
+            }
+        }
+
+        .timeline-icon {
+            animation: pulse 2s infinite;
+        }
+
+        /* ===== Responsive Styles ===== */
+        @media (max-width: 1200px) {
+            .timeline {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .timeline {
+                padding: 2rem 1rem;
+            }
+
+            .timeline-content {
+                padding: 2rem;
+            }
+
+            nav .right ul {
+                gap: 0.8rem;
+            }
+        }
+
         @media (max-width: 768px) {
+            nav {
+                padding: 1.2rem 1rem;
+            }
+
+            nav .left {
+                font-size: 1.5rem;
+                z-index: 200;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav .right {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--nav-bg-dark);
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;
+            }
+
+            [data-theme="light"] nav .right {
+                background-color: var(--nav-bg-light);
+            }
+
+            nav .right.active {
+                right: 0;
+            }
+
+            nav .right ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 2rem;
+            }
+
+            nav .right ul li {
+                margin: 1rem 0;
+                font-size: 1.2rem;
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav .right ul a {
+                width: 100%;
+            }
+
+            .timeline::before {
+                left: 1.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                margin: 3rem 0;
+            }
+
+            .timeline-icon {
+                width: 3.5rem;
+                height: 3.5rem;
+                font-size: 1.2rem;
+                left: 0;
+                top: 0;
+            }
+
+            .timeline-content {
+                margin-left: 5rem;
+                padding: 1.5rem;
+                width: calc(100% - 5rem);
+            }
+
+            .timeline-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .theme {
+                top: 5rem;
+                right: 1rem;
+                height: 3rem;
+                width: 3rem;
+                font-size: 1.2rem;
+            }
+
             .page-title h1 {
                 font-size: 2.2rem;
             }
@@ -518,15 +566,59 @@
                 padding: 0 1rem;
             }
         }
- 
 
+        @media (max-width: 480px) {
+            .timeline {
+                width: 95%;
+                margin-top: 3rem;
+            }
+
+            .timeline::before {
+                left: 1rem;
+                width: 4px;
+            }
+
+            .timeline-icon {
+                width: 2.7rem;
+                height: 2.7rem;
+                font-size: 1rem;
+                left: 0;
+            }
+
+            .timeline-content {
+                margin-left: 3.5rem;
+                padding: 1.2rem;
+                border-radius: 1rem;
+                width: calc(100% - 3.5rem);
+            }
+
+            .timeline-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .timeline-content p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+
+            .year-badge {
+                
+                display: inline-block;
+                margin-bottom: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="left">Education</div>
-            <div class="hamburger">
+            <div class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -539,7 +631,7 @@
                     <a href="index.html">
                         <li>About Me</li>
                     </a>
-                    <a href="Education.html">
+                    <a href="Education.html" aria-current="page">
                         <li>Education</li>
                     </a>
                     <a href="index.html">
@@ -563,18 +655,16 @@
                     <a href="index.html">
                         <li>Contact Me</li>
                     </a>
-                    
                 </ul>
             </div>
         </nav>
-        
     </header>
     <main>
-        <button class="theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="theme" aria-label="Toggle dark/light theme"><i class="fa-solid fa-moon"></i></button>
         
         <!-- Decorative Elements -->
-        <div class="decorative-circle circle1"></div>
-        <div class="decorative-circle circle2"></div>
+        <div class="decorative-circle circle1" aria-hidden="true"></div>
+        <div class="decorative-circle circle2" aria-hidden="true"></div>
         
         <div class="container">
             <!-- Page Title -->
@@ -585,7 +675,7 @@
             
             <section class="timeline" id="Education">
                 <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="timeline-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></div>
                     <div class="timeline-content">
                         <div class="year-badge">2022–2026</div>
                         <h2>B.Tech</h2>
@@ -597,12 +687,12 @@
                             <div class="info-label">Year:</div>
                             <div>2022–2026</div>
                         </div>
-                        <img src="images/pu.jpg" alt="University">
+                        <img src="images/pu.jpg" alt="University" onerror="this.src='https://via.placeholder.com/800x400?text=University+Image'">
                     </div>
                 </div>
             
                 <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fa-solid fa-school"></i></div>
+                    <div class="timeline-icon" aria-hidden="true"><i class="fa-solid fa-school"></i></div>
                     <div class="timeline-content">
                         <div class="year-badge">2020–2022</div>
                         <h2>HSC</h2>
@@ -614,12 +704,12 @@
                             <div class="info-label">Year:</div>
                             <div>2020–2022</div>
                         </div>
-                        <img src="images/bhs.jpeg" alt="School">
+                        <img src="images/bhs.jpeg" alt="School" onerror="this.src='https://via.placeholder.com/800x400?text=School+Image'">
                     </div>
                 </div>
             
                 <div class="timeline-item">
-                    <div class="timeline-icon"><i class="fa-solid fa-school-flag"></i></div>
+                    <div class="timeline-icon" aria-hidden="true"><i class="fa-solid fa-school-flag"></i></div>
                     <div class="timeline-content">
                         <div class="year-badge">2018–2020</div>
                         <h2>SSC</h2>
@@ -631,7 +721,7 @@
                             <div class="info-label">Year:</div>
                             <div>2018–2020</div>
                         </div>
-                        <img src="images/bhs.jpeg" alt="School">
+                        <img src="images/bhs.jpeg" alt="School" onerror="this.src='https://via.placeholder.com/800x400?text=School+Image'">
                     </div>
                 </div>
             </section>
@@ -658,8 +748,10 @@
         function updateThemeButton() {
             if (currentTheme === 'dark') {
                 themeButton.innerHTML = '<i class="fa-solid fa-sun"></i>';
+                themeButton.setAttribute('aria-label', 'Switch to light theme');
             } else {
                 themeButton.innerHTML = '<i class="fa-solid fa-moon"></i>';
+                themeButton.setAttribute('aria-label', 'Switch to dark theme');
             }
         }
         
@@ -670,10 +762,14 @@
         hamburger.addEventListener('click', () => {
             navRight.classList.toggle('active');
             
+            // Update ARIA attributes
+            const isExpanded = navRight.classList.contains('active');
+            hamburger.setAttribute('aria-expanded', isExpanded);
+            
             // Animate hamburger to X
             const spans = hamburger.querySelectorAll('span');
             
-            if (navRight.classList.contains('active')) {
+            if (isExpanded) {
                 spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
                 spans[1].style.opacity = '0';
                 spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
@@ -690,6 +786,7 @@
             link.addEventListener('click', () => {
                 if (navRight.classList.contains('active')) {
                     navRight.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', false);
                     
                     const spans = hamburger.querySelectorAll('span');
                     spans[0].style.transform = 'none';
@@ -699,28 +796,38 @@
             });
         });
         
-        // Animate timeline items on scroll
+        // Animate timeline items on scroll with Intersection Observer
         const timelineItems = document.querySelectorAll('.timeline-item');
         
-        function checkScroll() {
-            timelineItems.forEach(item => {
-                const itemTop = item.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (itemTop < windowHeight * 0.8) {
-                    item.classList.add('active');
+        // Create the observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once we've shown the item, we don't need to observe it anymore
+                    observer.unobserve(entry.target);
                 }
             });
-        }
-        
-        // Add initial active class after page load
-        window.addEventListener('load', () => {
-            setTimeout(checkScroll, 300);
+        }, {
+            root: null, // viewport
+            threshold: 0.1, // When 10% of the item is visible
+            rootMargin: '-50px'
         });
         
-        // Check on scroll
-        window.addEventListener('scroll', checkScroll);
+        // Observe each timeline item
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+        
+        // Check for images that fail to load and replace with placeholder
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.complete && img.naturalWidth === 0) {
+                    console.log('Image failed to load:', img.src);
+                }
+            });
+        });
     </script>
-    <script src="app.js"></script>
 </body>
 </html>

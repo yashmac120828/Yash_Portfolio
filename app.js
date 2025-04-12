@@ -1,7 +1,12 @@
 // Global variables
 let body = document.querySelector("body");
 let nav = document.querySelectorAll("nav");
+
 let themeButton = document.querySelector(".theme");
+if (typeof themeButton === 'undefined') {
+    const themeButton = document.querySelector(".theme");
+    // rest of the code
+  }
 let hr = document.querySelectorAll(".hr"); 
 let theme = localStorage.getItem('theme') || 'light'; 
 // Hamburger menu functionality
