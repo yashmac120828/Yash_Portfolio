@@ -13,6 +13,7 @@
     rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <link rel="icon" href="images/Yashmac's Portfolio.jpg" type="image/png">
 <body>
     <header>
@@ -37,8 +38,8 @@
                     <a href="#Skills">
                         <li>Skills</li>
                     </a>
-                    <a href="Achivements.html" class="transition-link">
-                        <li>Achivements</li>
+                    <a href="Certifications.html" class="transition-link">
+                        <li>Certifications</li>
                     </a>
                     <a href="Internship.html" class="transition-link">
                         <li>Internship</li>
@@ -63,205 +64,756 @@
     </header>
     <main>
         <button class="theme"><i class="fa-solid fa-moon"></i></button>
-        <section id="Home" class="firstSection fade-in">
-            <div class="leftSection">
-                Hii, My Name Is <span class="purple">Yash</span>
-                <div>And I Am A Passionate</div>
-                <span id="element"></span>
-                <div class="imgtags">
-                    <a href="https://linkedin.com/in/yash-machhi-7b87182b4"><img src="images/linkedin.png" alt="image will be load shortly"></a>
-                    <a href="https://github.com/yashmac120828"><img src="images/github.png" alt="image will be load shortly"></a>
-                    <a href=""><img src="images/email.png" alt="image will be load shortly"></a>
-                    <a href="https://leetcode.com/u/Yash_machhi_1408/"><img src="images/leetcode.png" alt="image will be load shortly"></a>
+        <section id="Home" class="firstSection">
+            <div class="hero-content">
+              <div class="leftSection">
+                <div class="intro-text">
+                  <h1 class="greeting">Hi, I'm <span class="highlight">Yash</span></h1>
+                  <h2 class="profession">A Passionate <span id="element"></span></h2>
+                  <p class="tagline">Transforming ideas into visually stunning digital experiences</p>
+                  
+                  <div class="cta-buttons">
+                    <a href="#Contact-Me" class="primary-btn">Let's Connect</a>
+                    <a href="#Projects" class="secondary-btn">View My Work</a>
+                  </div>
                 </div>
                 
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/yash-machhi-7b87182b4" class="social-icon linkedin" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                  <a href="https://github.com/yashmac120828" class="social-icon" aria-label="GitHub">
+                    <img src="images/github.png" alt="GitHub">
+                  </a>
+                  <a href="mailto:your-email@example.com" class="social-icon" aria-label="Email">
+                    <img src="images/email.png" alt="Email">
+                  </a>
+                  <a href="https://leetcode.com/u/Yash_machhi_1408/" class="social-icon" aria-label="LeetCode">
+                    <img src="images/leetcode.png" alt="LeetCode">
+                  </a>
+                </div>
+              </div> <!-- This closing div for leftSection was missing -->
+              
+              <div class="rightSection">
+                <div class="illustration-container">
+                  <img src="images/bg.png" alt="Developer illustration" class="main-illustration">
+                  <div class="floating-element element-1"></div>
+                  <div class="floating-element element-2"></div>
+                  <div class="floating-element element-3"></div>
+                </div>
+              </div>
+            </div> <!-- This closing div for hero-content was missing -->
+            
+            <div class="scroll-indicator">
+              <div class="mouse">
+                <div class="wheel"></div>
+              </div>
+              <div class="arrow-down"></div>
             </div>
-            <div class="rightSection">
-                <img src="images/bg.png" alt="image will load shortly">
-            </div>
-        </section>
+          </section>
         <hr class="hr">
         <section id="AboutMe" class="secondSection1 fade-in">
-            <h1>About Me</h1>
-            <div class="box">
-                <div class="imgbox">
-                    <img src="images/profile.jpg" class="profile"alt="image will load shortly">
+            <h1 class="section-title">About Me</h1>
+            
+            <div class="about-container">
+                <div class="profile-container">
+                    <div class="profile-image-wrapper">
+                        <div class="profile-image">
+                            <img src="images/profile.jpg" alt="Yash Machhi">
+                        </div>
+                        <div class="animated-border"></div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/yashmac120828" class="social-icon github" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/yash-machhi-7b87182b4" class="social-icon linkedin" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://yashmachhi-portfolio.bytexl.live/" class="social-icon portfolio" target="_blank">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <a href="mailto:yashmachhi1408@gmail.com" class="social-icon email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="infobox">
-                    <h2>I Am Yash Machhi</h2>
-                    <span id="e"></span>
+                
+                <div class="about-content">
+                    <h2 class="animated-text">I'm <span class="highlight">Yash Machhi</span></h2>
+                    <h3 class="subtitle typewriter">Computer Science Engineering Student</h3>
+                    
+                    <div class="about-text-container">
+                        <p class="reveal-text">Welcome to my portfolio! I'm passionate about bridging the gap between technology and design. My background in video editing, graphic design, and UI/UX design allows me to create compelling content and user experiences.</p>
+                        
+                        <p class="reveal-text">I'm dedicated to leveraging my skills to solve real-world problems and bring innovative ideas to life. I'm always eager to learn new technologies and collaborate on exciting projects.</p>
+
+                        <p class="reveal-text">I'm constantly seeking opportunities to collaborate on innovative projects that make a difference.</p>
+                    </div>
+                    
+                    
+                    <div class="personal-info fade-in-up">
+                        <div class="info-item">
+                            <span class="info-title">Education</span>
+                            <span class="info-value">B.Tech in Computer Science Engineering</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">University</span>
+                            <span class="info-value">Parul University, Vadodara, Gujarat</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-title">Interests</span>
+                            <span class="info-value">Web Development, UI/UX Design, Video Editing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="#Contact-Me" class="btn primary-btn">
+                            <span>Contact Me</span>
+                            <div class="btn-animation"></div>
+                        </a>
+                        <a href="PDF's/Yash Resume-output.pdf" download class="btn secondary-btn">
+                            <span>Download CV</span>
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
-        </section>
-        <hr class="hr">
-        <section id="Skills" class="secondSection fade-in">
-            <h1>Skills</h1>
-            <div class="box">
-                <div class="inbox">
-                    <div class="imgskills"><img src="images/adobe ps.png"alt="image will load shortly" height="100px" width="100px"><h3>Adobe Photoshop</h3></div>
-                    <div class="imgskills"><img src="images/adobe is.png"alt="image will load shortly" height="100px" width="100px"><h3>Adobe Illustrator</h3></div>
-                    <div class="imgskills"><img src="images/capcut.jpg"alt="image will load shortly" height="100px" width="100px"><h3>CapCut</h3></div>
-                    <div class="imgskills"><img src="images/davinci.png" alt="image will load shortly"height="100px" width="100px"><h3>Davinci Resolve</h3></div>
-                    <div class="imgskills"><img src="images/html.png"alt="image will load shortly" height="100px" width="100px"><h3>HTML</h3></div>
-                    <div class="imgskills"><img src="images/css.png"alt="image will load shortly" height="100px" width="100px"><h3>CSS</h3></div>
-                    <div class="imgskills"><img src="images/js.png" alt="image will load shortly"height="100px" width="100px"><h3>JavaScript</h3></div>
-                    <div class="imgskills"><img src="images/java.png"alt="image will load shortly" height="100px" width="100px"><h3>Core Java</h3></div>
-                    <div class="imgskills"><img src="images/springboot.png" alt="image will load shortly"height="100px" width="100px"><h3>SpringBoot</h3></div>
-                    <div class="imgskills"><img src="images/python.png"alt="image will load shortly" height="100px" width="100px"><h3>Python</h3></div>
-                    <div class="imgskills"><img src="images/mysql.png"alt="image will load shortly" height="100px" width="100px"><h3>MySQL</h3></div>
-                </div>
+            <div class="background-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
             </div>
         </section>
         <hr class="hr">
-        <section id="Services" class="thirdSection fade-in">
-            <h1>Services</h1>
-            <div class="box">
-                <div class="box1">
-                    <video src="images/ui-ux.mp4" muted autoplay loop controls></video>
-                </div>
-                <div class="box2">
-                    <video src="images/graphic design.mp4" muted autoplay loop controls></video>
-                </div>
-                <div class="box3">
-                    <video src="images/vidoe editing.mp4" muted autoplay loop controls></video>
-                </div>
+        <section id="Skills" class="skills-section">
+            <div class="section-header">
+                <h1 class="section-title">Skills</h1>
+                <p class="section-subtitle">My professional toolkit</p>
             </div>
-            <div class="box-2">
-                <div class="box4">
-                    <h1  class="h1">Frontend & UI/UX Design</h1>
-                </div>
-                <div class="box5">
-                    <h1 class="h1">Graphic Design</h1>
-                </div>
-                <div class="box6">
-                    <h1 class="h1">Video Editing</h1>
-                </div>
+            
+            <div class="skills-categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="Programming Languages">Programming Languages</button>
+                <button class="category-btn" data-category="Frameworks & Libraries">Frameworks & Libraries</button>
+                <button class="category-btn" data-category="Databases">Databases</button>
+                <button class="category-btn" data-category="Version Control">Version Control</button>
+                <button class="category-btn" data-category="Design Tools">Design Tools</button>
+                <button class="category-btn" data-category="Media & Editing Tools">Media & Editing Tools</button>
             </div>
-        </section>
-        <hr class="hr">
-        <section id="Projects" class="fourthSection fade-in">
-            <h1>Projects</h1>
-            <div class="box">
-                <div class="inbox">
-                        <div class="netflix">
-                            <img src="images/darknetflix.png" alt="image will load shortly" height="200px" width="250px" alt="image will load" class="netf">
-                            <h2 class="p">Netflix UI-UX Clone</h2>
-                            <h3>Roles : As A Frontend Developer</h3>
-                            <br>
-                            <h3>Technologies: HTML , CSS AND JAVASCRIPT</h3>
-                            <a href="https://github.com/yashmac120828/NetflixUI-UXClone.git"><h3 class="repo">Github Repo Link</h3></a>
+            
+            <div class="skills-container">
+                <!-- Programming Languages -->
+                <div class="skill-card" data-category="Programming Languages">
+                    <div class="skill-icon">
+                        <img src="images/c.jpg" alt="C Language" />
+                    </div>
+                    <h3 class="skill-name">C</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
                         </div>
-                        <div class="amazon">
-                            <img src="images/darkamzon.png" alt="image will load shortly" height="200px" width="250px" alt="image will load" class="amzn">
-                            <h2 class="p">Amazon UI-UX Clone</h2>
-                            <h3>Roles : As A Frontend Developer</h3>
-                            <br>
-                            <h3>Technologies: HTML & CSS</h3>
-                            <a href="https://github.com/yashmac120828/AmazoneUI-UXClone.git"><h3 class="repo">Github Repo Link</h3></a>
+                        <span class="level-text">Expert</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Programming Languages">
+                    <div class="skill-icon">
+                        <img src="images/java.png" alt="Core Java" />
+                    </div>
+                    <h3 class="skill-name">Core Java</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <span class="level-text">Proficient</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Programming Languages">
+                    <div class="skill-icon">
+                        <img src="images/python.png" alt="Python" />
+                    </div>
+                    <h3 class="skill-name">Python</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                        <span class="level-text">Advanced</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Programming Languages">
+                    <div class="skill-icon">
+                        <img src="images/js.png" alt="JavaScript" />
+                    </div>
+                    <h3 class="skill-name">JavaScript</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 95%"></div>
+                        </div>
+                        <span class="level-text">Advanced</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Programming Languages">
+                    <div class="skill-icon">
+                        <img src="images/html.png" alt="HTML" />
+                    </div>
+                    <h3 class="skill-name">HTML</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <span class="level-text">Proeficient</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Programming Languages">
+                    <div class="skill-icon">
+                        <img src="images/css.png" alt="CSS" />
+                    </div>
+                    <h3 class="skill-name">CSS</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <span class="level-text">Proeficient</span>
+                    </div>
+                </div>
+                
+                <!-- Frameworks & Libraries -->
+                <div class="skill-card" data-category="Frameworks & Libraries">
+                    <div class="skill-icon">
+                        <img src="images/react.png" alt="React" />
+                    </div>
+                    <h3 class="skill-name">React</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%"></div>
+                        </div>
+                        <span class="level-text">Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Frameworks & Libraries">
+                    <div class="skill-icon">
+                        <img src="images/express.png" alt="Express.js" />
+                    </div>
+                    <h3 class="skill-name">Express.js</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%"></div>
+                        </div>
+                        <span class="level-text">Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Frameworks & Libraries">
+                    <div class="skill-icon">
+                        <img src="images/nodejs.png" alt="Node.js" />
+                    </div>
+                    <h3 class="skill-name">Node.js</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <span class="level-text">Proeficient</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Frameworks & Libraries">
+                    <div class="skill-icon">
+                        <img src="images/nextjs.png" alt="Next.js" />
+                    </div>
+                    <h3 class="skill-name">Next.js</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 30%"></div>
+                        </div>
+                        <span class="level-text">Basic</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Frameworks & Libraries">
+                    <div class="skill-icon">
+                        <img src="images/springboot.png" alt="SpringBoot" />
+                    </div>
+                    <h3 class="skill-name">SpringBoot</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%"></div>
+                        </div>
+                        <span class="level-text">Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Frameworks & Libraries">
+                    <div class="skill-icon">
+                        <img src="images/bootstrap.jpg" alt="Bootstrap" />
+                    </div>
+                    <h3 class="skill-name">Bootstrap</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                        <span class="level-text">Advanced</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Frameworks & Libraries">
+                    <div class="skill-icon">
+                        <img src="images/cssTailwind.png" alt="CSS Tailwind" />
+                    </div>
+                    <h3 class="skill-name">CSS Tailwind</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <span class="level-text">Expert</span>
+                    </div>
+                </div>
+                
+                <!-- Databases -->
+                <div class="skill-card" data-category="Databases">
+                    <div class="skill-icon">
+                        <img src="images/mongoDB.png" alt="MongoDB" />
+                    </div>
+                    <h3 class="skill-name">MongoDB</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <span class="level-text">Proficient</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Databases">
+                    <div class="skill-icon">
+                        <img src="images/mysql.png" alt="MySQL" />
+                    </div>
+                    <h3 class="skill-name">MySQL</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <span class="level-text">Advanced</span>
+                    </div>
+                </div>
+                
+                <!-- Version Control -->
+                <div class="skill-card" data-category="Version Control">
+                    <div class="skill-icon">
+                        <img src="images/git.png" alt="Git" />
+                    </div>
+                    <h3 class="skill-name">Git</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                        <span class="level-text">Advanced</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Version Control">
+                    <div class="skill-icon">
+                        <img src="images/github.png" alt="GitHub" />
+                    </div>
+                    <h3 class="skill-name">GitHub</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%"></div>
+                        </div>
+                        <span class="level-text">Advanced</span>
+                    </div>
+                </div>
+                
+                <!-- Design Tools -->
+                <div class="skill-card" data-category="Design Tools">
+                    <div class="skill-icon">
+                        <img src="images/adobe ps.png" alt="Adobe Photoshop" />
+                    </div>
+                    <h3 class="skill-name">Adobe Photoshop</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <span class="level-text">Expert</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Design Tools">
+                    <div class="skill-icon">
+                        <img src="images/adobe is.png" alt="Adobe Illustrator" />
+                    </div>
+                    <h3 class="skill-name">Adobe Illustrator</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <span class="level-text">Expert</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Design Tools">
+                    <div class="skill-icon">
+                        <img src="images/figma.png" alt="Figma" />
+                    </div>
+                    <h3 class="skill-name">Figma</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <span class="level-text">Expert</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Design Tools">
+                    <div class="skill-icon">
+                        <img src="images/canva.png" alt="Canva" />
+                    </div>
+                    <h3 class="skill-name">Canva</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <span class="level-text">Proeficient</span>
+                    </div>
+                </div>
+                
+                <!-- Media & Editing Tools -->
+                <div class="skill-card" data-category="Media & Editing Tools">
+                    <div class="skill-icon">
+                        <img src="images/capcut.jpg" alt="CapCut" />
+                    </div>
+                    <h3 class="skill-name">CapCut</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                        <span class="level-text">Proeficient</span>
+                    </div>
+                </div>
+                
+                <div class="skill-card" data-category="Media & Editing Tools">
+                    <div class="skill-icon">
+                        <img src="images/davinci.png" alt="Davinci Resolve" />
+                    </div>
+                    <h3 class="skill-name">Davinci Resolve</h3>
+                    <div class="skill-level">
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                        <span class="level-text">Expert</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="hr">
+        <section id="Services">
+            <h1 class="section-title">Services</h1>
+        
+            <div class="carousel-container">
+        
+              <div class="carousel-slide active">
+                <video src="images/ui-ux.mp4" muted autoplay loop></video>
+                <div class="carousel-caption">
+                  <h5>Frontend & UI/UX Design</h5>
+                  <p>Creating visually appealing, user-friendly interfaces and responsive web designs.</p>
+                </div>
+              </div>
+        
+              <div class="carousel-slide">
+                <video src="images/graphic design.mp4" muted autoplay loop></video>
+                <div class="carousel-caption">
+                  <h5>Graphic Design</h5>
+                  <p>Designing creative assets like logos, banners, and social media graphics.</p>
+                </div>
+              </div>
+        
+              <div class="carousel-slide">
+                <video src="images/vidoe editing.mp4" muted autoplay loop></video>
+                <div class="carousel-caption">
+                  <h5>Video Editing</h5>
+                  <p>Editing professional-grade videos for reels, promos, and content marketing.</p>
+                </div>
+              </div>
+        
+            </div>
+        
+            <!-- Indicators -->
+            <div class="indicators">
+              <button class="indicator active" data-index="0"></button>
+              <button class="indicator" data-index="1"></button>
+              <button class="indicator" data-index="2"></button>
+            </div>
+        
+            <!-- Navigation -->
+            <div class="nav-buttons">
+              <button id="prevBtn">Previous</button>
+              <button id="nextBtn">Next</button>
+            </div>
+          </section>
+          
+        <hr class="hr">
+        <section class="projects-section" id="Projects">
+            <h2 class="section-title">Projects</h2>
+            
+            <div class="projects-container">
+              <!-- Netflix Clone Project -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img src="images/lightnetflix.png" alt="Netflix Clone Preview">
+                  <div class="project-overlay">
+                    <div class="project-logo">
+                      <img src="images/netflix.png" alt="Netflix Logo">
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">Netflix UI-UX Clone</h3>
+                  <div class="project-role">Frontend Developer</div>
+                  <div class="project-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                  </div>
+                  <p class="project-description">A pixel-perfect recreation of Netflix's streaming platform interface, featuring responsive design and dynamic content loading.</p>
+                  <div class="project-links">
+                    <a href="https://github.com/yashmac120828/NetflixUI-UXClone.git" class="project-link">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                      </svg>
+                      GitHub
+                    </a>
+                    <a href="https://netflixuiuxclone.bytexl.live/" class="project-link" target="_blank">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Live Link
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Amazon Clone Project -->
+              <div class="project-card">
+                <div class="project-image">
+                  <img src="images/amazon.png" alt="Amazon Clone Preview">
+                  <div class="project-overlay">
+                    <div class="project-logo">
+                      <img src="images/amazon.png" alt="Amazon Logo">
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">Amazon UI-UX Clone</h3>
+                  <div class="project-role">Frontend Developer</div>
+                  <div class="project-tech">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                  </div>
+                  <p class="project-description">A detailed recreation of Amazon's e-commerce interface with responsive product grids, navigation, and checkout flow simulation.</p>
+                  <div class="project-links">
+                    <a href="https://github.com/yashmac120828/AmazoneUI-UXClone.git" class="project-link">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                      </svg>
+                      GitHub
+                    </a>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Decorative elements -->
+            <div class="decoration decoration-1"></div>
+            <div class="decoration decoration-2"></div>
+          </section>
+        <hr class="hr">
+        <section class="fifthSection fade-in" id="Contact-Me">
+            <h1 class="section-title animate" style="animation-delay: 0.1s">Get In Touch</h1>
+        
+            <div class="contact-container">
+                <!-- Interactive Business Card -->
+                <div class="card animate" style="animation-delay: 0.3s">
+                    <div class="card-inner">
+                        <!-- Front of card -->
+                        <div class="card-face card-front">
+                            <div class="card-decoration"></div>
+                            <div class="card-decoration"></div>
+                            
+                            <div class="profile-content">
+                                
+                                
+                                <div class="profile-info">
+                                    <h2>Yash Machhi</h2>
+                                    <p class="profile-title">Frontend Developer</p>
+                                    <p>Passionate about creating innovative solutions through code. Let's connect!</p>
+                                </div>
+                                
+                                <div class="social-icons">
+                                    <div class="social-icon">
+                                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.9.0/instagram.svg" alt="Instagram">
+                                    </div>
+                                    <div class="social-icon">
+                                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.9.0/github.svg" alt="GitHub">
+                                    </div>
+                                    <div class="social-icon">
+                                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.9.0/linkedin.svg" alt="LinkedIn">
+                                    </div>
+                                    <div class="social-icon">
+                                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.9.0/leetcode.svg" alt="LeetCode">
+                                    </div>
+                                </div>
+                                <div class="flip-indicator">
+                                    <div class="flip-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M15 15h-12a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v1"></path>
+                                            <path d="M18 6l3 4l-3 4"></path>
+                                            <path d="M21 10h-10"></path>
+                                        </svg>
+                                    </div>
+                                    <p class="flip-text">Flip for portfolio feedback</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Back of card -->
+                        <div class="card-face card-back">
+                            <div class="qr-code-container">
+                                <div class="qr-code">
+                                    <img src="images/qr-code.png" alt="QR Code">
+                                </div>
+                                <p class="qr-label">Scan for feedback</p>
+                            </div>
+                            
+                            <div class="action-buttons">
+                                
+                                <button class="btn btn-primary" id="download-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                    Download vCard
+                                </button>
+                                <button class="btn btn-outline" id="share-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="18" cy="5" r="3"></circle>
+                                        <circle cx="6" cy="12" r="3"></circle>
+                                        <circle cx="18" cy="19" r="3"></circle>
+                                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                    </svg>
+                                    Share
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Links Section -->
+                <div class="contact-methods animate" style="animation-delay: 0.5s">
+                    <h3>Connect With Me</h3>
+                    
+                    <a href="https://www.instagram.com/its_yash_1408?igsh=dnJ1dnB1bTd5bGNs&utm_source=qr" class="contact-link" id="instagram-link">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.9.0/instagram.svg" alt="Instagram">
+                        <div class="info">
+                            <span class="label">Instagram</span>
+                            <span class="value">@its_yash_1408</span>
+                        </div>
+                    </a>
+                    
+                    <a href="mailto:yashmachhi1408@gmail.com" class="contact-link">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.9.0/gmail.svg" alt="Email">
+                        <div class="info">
+                            <span class="label">Email</span>
+                            <span class="value">yashmachhi1408@gmail.com</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/yashmac120828" class="contact-link">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.9.0/github.svg" alt="GitHub">
+                        <div class="info">
+                            <span class="label">GitHub</span>
+                            <span class="value">yashmac120828</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/yash-machhi-7b87182b4" class="contact-link">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.9.0/linkedin.svg" alt="LinkedIn">
+                        <div class="info">
+                            <span class="label">LinkedIn</span>
+                            <span class="value">yash-machhi</span>
+                        </div>
+                    </a>
+                    
+                    <a href="https://leetcode.com/u/Yash_machhi_1408/" class="contact-link">
+                        <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.9.0/leetcode.svg" alt="LeetCode">
+                        <div class="info">
+                            <span class="label">LeetCode</span>
+                            <span class="value">yash_machhi_1408</span>
                         </div>
                     </a>
                 </div>
             </div>
         </section>
-        <hr class="hr">
-        <section class="fifthSection fade-in" id="Contact-Me">
-            <h1>Get In Touch</h1>
-            <div class="contactmebox">
-                <div class="imgbox">
-                    <img src="images/profile.jpg" class="profile"alt="image will load shortly">
-                </div>
-                <div class="detailsbox">
-                    <a href="" class="c1"><div class="b1"><img src="images/instagram.png" height="50px" width="50px" alt="image will load shortly"><h4>@its_yash_1408</h4></div></a>
-                    <div class="b1"><img src="images/email.png" height="50px" width="50px"alt="image will load shortly"><h4>yashmachhi1408@gmail.com</h4></div> 
-                    <a href="https://github.com/yashmac120828 " class="c1" ><div class="b1"><img src="images/github.png"alt="image will load shortly" height="50px" width="50px" ><h4>yashmac120828</h4></div></a>
-                    <a href="https://linkedin.com/in/yash-machhi-7b87182b4" class="c1"><div class="b1"><img src="images/linkedin.png" alt="image will load shortly" height="50px" width="50px" ><h4>yash-machhi</h4></div></a>
-                    <a href="https://leetcode.com/u/Yash_machhi_1408/" class="c1"><div class="b1"><img src="images/leetcode.png" alt="image will load shortly" height="50px" width="50px"><h4>yash_machhi_1408</h4></div></a>
-                </div>
-                <div class="vertical-ruler"></div>
-                <div class="formbox">
-                        <div class="formbox-inside">
-                            <form action="formServlet"method="POST" >
-                                <h1>Feedback Form</h1>
-                                <h3 id="h3">Name<input type="text" placeholder="Enter The Name"class="inpt" name="Name" required></h3>
-                                <h3 id="h3">Email<input type="email" placeholder="Enter The Email"class="inpt" name="Email" required></h3>
-                                <h3 id="h3">Query/Problem<input type="text" placeholder="Enter The Query"class="inpt" name="Query"></h3>
-                                <h3 id="h3">Review<input type="number" placeholder="Enter the marks out of 10"class="inpt" name="Review" min="0" max="10"></h3>
-                                <input type="submit" class="submit">
-                            </form>
-                        </div>
-                    
-                </div>
-            </div>
-        </section>
     </main>
-    <hr class="hr">
-    <footer>
-        <div class="box">
-            <div class="box11">
-                <h1>THANK YOU !!!!</h1>
-                <h3>We want to extend our heartfelt appreciation to you for taking the time to explore our portfolio. We hope that as you browse through our projects, you find inspiration and a glimpse into the passion that drives us. Wishing you a Thanksgiving filled with warmth, joy, and cherished moments with loved ones!</h3>
+    <footer class="modern-footer" style="margin-top:15px;">
+        <div class="footer-container">
+          <!-- Appreciation Section -->
+          <div class="footer-section appreciation">
+            <h2>Thank You!</h2>
+            <p>We appreciate you exploring our portfolio. We hope our projects inspire you and show the passion behind our work. Wishing you joy and wonderful moments with your loved ones!</p>
+            <div class="social-icons">
+              <a href="https://linkedin.com/in/yash-machhi-7b87182b4" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+              <a href="https://github.com/yashmac120828" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://yashmachhi-portfolio.bytexl.live/" aria-label="Portfolio"><i class="fa-solid fa-globe"></i></a>
+              <a href="https://www.instagram.com/its_yash_1408?igsh=dnJ1dnB1bTd5bGNs&utm_source=qr" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
-            <div class="box21">
-                <h2>Quick Links</h2>
-                        <ul>
-                            <a href="#Home">
-                                <li>Home</li>
-                            </a>
-                            <a href="#AboutMe">
-                                <li>About Me</li>
-                            </a>
-                            <a href="Education.html">
-                                <li>Education</li>
-                            </a>
-                            <a href="#Skills">
-                                <li>Skills</li>
-                            </a>
-                            <a href="Achivements.html">
-                                <li>Achivements</li>
-                            </a>
-                            <a href="Internship.html">
-                                <li>Internship</li>
-                            </a>
-                            <a href="#Services">
-                                <li>Services</li>
-                            </a>
-                            <a href="#Projects">
-                                <li>Projects</li>
-                            </a>
-                            <a href="PDF's/Yash Resume-output.pdf" target="_blank">
-                                <li>Resume</li>
-                            </a>
-                            <a href="#Contact-Me">
-                                <li>Contact Me</li>
-                            </a>
-                            
-                        </ul>
+          </div>
+          
+          <!-- Quick Links -->
+          <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#Home">Home</a></li>
+              <li><a href="#AboutMe">About Me</a></li>
+              <li><a href="Education.html">Education</a></li>
+              <li><a href="#Skills">Skills</a></li>
+              <li><a href="Certifications.html">Certifications</a></li>
+              <li><a href="Internship.html">Internship</a></li>
+              <li><a href="#Services">Services</a></li>
+              <li><a href="#Projects">Projects</a></li>
+              <li><a href="PDF's/Yash Resume-output.pdf" target="_blank">Resume</a></li>
+              <li><a href="#Contact-Me">Contact Me</a></li>
+            </ul>
+          </div>
+          
+          <!-- Contact Section -->
+          <div class="footer-section contact">
+            <h3>Contact Me</h3>
+            <div class="contact-info">
+              <p><i class="fas fa-phone"></i> +91 8780364562</p>
+              <p><i class="fas fa-envelope"></i> yashmachhi1408@gmail.com</p>
+              <p><i class="fas fa-map-marker-alt"></i> Vadodara-390004</p>
             </div>
-            <div class="box31">
-                <h2>Contact Me</h2>
-                <h3>Ph    | +91 8780364562</h3>
-                <h3>Email | yashmachhi1408@gmail.com</h3>
-                <h3>       Vadodara-390004</h3>
-            </div>
+          </div>
         </div>
-    </footer>
+        
+        <!-- Copyright Bar -->
+        <div class="copyright">
+          <p>&copy; 2025 Yash Machhi. All rights reserved.</p>
+        </div>
+      </footer>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Web Developer', 'Graphic Designer', 'Video Editor'],
-            typeSpeed: 50,
-            backSpeed: 25, 
-            backDelay: 1000, 
-            loop: true,
-        });
-        var typed1=new Typed("#e",{
-            strings:['Welcome to my portfolio! I’m a Computer Science Engineering student who loves to bridge the gap between technology and design. My background in video editing, graphic design, and UI/UX design allows me to create compelling content and user experiences. I’m passionate about leveraging my skills to solve real-world problems and bring innovative ideas to life. I’m always eager to learn and grow, and I look forward to connecting with others in the tech and design communities.'],
-            typeSpeed: 20,
-            loop: true,
-        })
-    </script>
-</body>
 <script src="app.js"></script>
-
+</body>
 </html>

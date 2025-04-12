@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internship</title>
+    <title>Certifications</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -147,14 +147,14 @@
             color: #ddd;
         }
 
-        /* Internship Styles */
-        .internship-container {
+        /* Certification Styles */
+        .certification-container {
             width: 90%;
             max-width: 1200px;
             margin: 3rem auto;
         }
 
-        .internship-card {
+        .certification-card {
             background: var(--card-bg-light);
             border-radius: 15px;
             overflow: hidden;
@@ -166,17 +166,17 @@
             position: relative;
         }
 
-        [data-theme="dark"] .internship-card {
+        [data-theme="dark"] .certification-card {
             background: var(--card-bg);
             border-left: 5px solid var(--secondary);
         }
 
-        .internship-card:hover {
+        .certification-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
         }
 
-        .internship-image {
+        .certification-image {
             flex: 0 0 35%;
             padding: 2rem;
             display: flex;
@@ -184,7 +184,7 @@
             justify-content: center;
         }
 
-        .internship-image img {
+        .certification-image img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
@@ -192,11 +192,11 @@
             transition: var(--transition);
         }
 
-        .internship-image img:hover {
+        .certification-image img:hover {
             transform: scale(1.05);
         }
 
-        .internship-content {
+        .certification-content {
             flex: 0 0 65%;
             padding: 2.5rem;
             display: flex;
@@ -204,7 +204,7 @@
             justify-content: center;
         }
 
-        .internship-title {
+        .certification-title {
             font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 1rem;
@@ -212,11 +212,11 @@
             display: inline-block;
         }
 
-        [data-theme="dark"] .internship-title {
+        [data-theme="dark"] .certification-title {
             color: var(--text-light);
         }
 
-        .internship-title::after {
+        .certification-title::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -227,7 +227,7 @@
             border-radius: 10px;
         }
 
-        .internship-period {
+        .certification-period {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 0.5rem 1.5rem;
@@ -239,7 +239,7 @@
             box-shadow: var(--shadow);
         }
 
-        .internship-details {
+        .certification-details {
             display: grid;
             grid-template-columns: auto 1fr;
             gap: 0.8rem 2rem;
@@ -308,23 +308,23 @@
 
         /* Responsive design */
         @media (max-width: 992px) {
-            .internship-card {
+            .certification-card {
                 flex-direction: column;
             }
             
-            .internship-image,
-            .internship-content {
+            .certification-image,
+            .certification-content {
                 flex: 1;
                 width: 100%;
                 padding: 1.5rem;
             }
             
-            .internship-image {
+            .certification-image {
                 display: flex;
                 justify-content: center;
             }
             
-            .internship-image img {
+            .certification-image img {
                 max-width: 300px;
             }
         }
@@ -334,11 +334,11 @@
                 font-size: 2.2rem;
             }
             
-            .internship-title {
+            .certification-title {
                 font-size: 1.8rem;
             }
             
-            .internship-details {
+            .certification-details {
                 grid-template-columns: 1fr;
                 gap: 0.5rem;
             }
@@ -352,11 +352,11 @@
         }
 
         @media (max-width: 480px) {
-            .internship-image img {
+            .certification-image img {
                 max-width: 100%;
             }
             
-            .internship-period {
+            .certification-period {
                 font-size: 0.8rem;
                 padding: 0.4rem 1rem;
             }
@@ -371,7 +371,7 @@
 <body>
     <header>
         <nav>
-            <div class="left">Internship</div>
+            <div class="left">Certifications</div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -391,10 +391,10 @@
                     <a href="index.html">
                         <li>Skills</li>
                     </a>
-                    <a href="Certifications.html">
+                    <a href="#Certifications">
                         <li>Certifications</li>
                     </a>
-                    <a href="#Internship">
+                    <a href="Internship.html">
                         <li>Internship</li>
                     </a>
                     <a href="index.html">
@@ -424,59 +424,202 @@
         <div class="container">
             <!-- Page Title -->
             <div class="page-title">
-                <h1>Professional Experience</h1>
-                <p>A showcase of my professional internships and work experiences that have helped shape my career path.</p>
+                <h1>Professional Certifications</h1>
+                <p>A showcase of my professional certifications and achievements that validate my skills and expertise.</p>
             </div>
             
-            <section class="internship-container" id="Internship">
-                <div class="internship-card">
-                    <div class="internship-image">
-                        <img src="images/varcode.png" alt="VarCode EduTech">
+            <section class="certification-container" id="Certifications">
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="images/google.png" alt="Google">
                     </div>
-                    <div class="internship-content">
-                        <h2 class="internship-title">Frontend Developer</h2>
-                        <div class="internship-period">March-2025 to Present</div>
+                    <div class="certification-content">
+                        <h2 class="certification-title">UI-UX Designer Certificate</h2>
+                        <div class="certification-period">February, 2025</div>
                         
-                        <div class="internship-details">
-                            <div class="detail-label">Company:</div>
-                            <div class="detail-value">VarCode EduTech</div>
+                        <div class="certification-details">
+                            <div class="detail-label">Provider:</div>
+                            <div class="detail-value">Google</div>
                             
-                            <div class="detail-label">Position:</div>
-                            <div class="detail-value">Frontend Developer</div>
+                            <div class="detail-label">Credential Type:</div>
+                            <div class="detail-value">Professional Certificate</div>
                             
-                            <div class="detail-label">Duration:</div>
-                            <div class="detail-value">On Going</div>
+                            <div class="detail-label">Issued:</div>
+                            <div class="detail-value">February, 2025</div>
                             
-                            <div class="detail-label">Responsibilities:</div>
-                            <div class="detail-value">Developing and maintaining web applications using HTML, CSS, and JavaScript and Latest Technologies Like ReactJS and NextJS.</div>
+                            <div class="detail-label">Skills:</div>
+                            <div class="detail-value">User Experience Design, Interface Design, Wireframing, Prototyping, User Research</div>
                         </div>
                         
-                        
+                        <a href="PDF's/ui-ux certificate.pdf" target="_blank" class="certificate-btn">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
                     </div>
                 </div>
-                <div class="internship-card">
-                    <div class="internship-image">
-                        <img src="images/horizon.jpg" alt="Horizon TECH">
+                
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="images/HackerRank_Icon-1000px.png" alt="HackerRank">
                     </div>
-                    <div class="internship-content">
-                        <h2 class="internship-title">Graphic Designer</h2>
-                        <div class="internship-period">April, 2023</div>
+                    <div class="certification-content">
+                        <h2 class="certification-title">HackerRank Skill Certificate - CSS</h2>
+                        <div class="certification-period">February 5, 2025</div>
                         
-                        <div class="internship-details">
-                            <div class="detail-label">Company:</div>
-                            <div class="detail-value">Horizon TECH</div>
+                        <div class="certification-details">
+                            <div class="detail-label">Provider:</div>
+                            <div class="detail-value">HackerRank</div>
                             
-                            <div class="detail-label">Position:</div>
-                            <div class="detail-value">Graphic Designer</div>
+                            <div class="detail-label">Credential Type:</div>
+                            <div class="detail-value">Skill Assessment</div>
                             
-                            <div class="detail-label">Duration:</div>
-                            <div class="detail-value">1 Months</div>
+                            <div class="detail-label">Issued:</div>
+                            <div class="detail-value">February 5, 2025</div>
                             
-                            <div class="detail-label">Responsibilities:</div>
-                            <div class="detail-value">Created engaging visual content, designed marketing materials, developed brand assets, and collaborated with cross-functional teams on design projects.</div>
+                            <div class="detail-label">Skills:</div>
+                            <div class="detail-value">Advanced CSS, Layouts, Animations, Responsive Design</div>
                         </div>
                         
-                        <a href="PDF's/Internship_Certificate.pdf" target="_blank" class="certificate-btn">
+                        <a href="PDF's/css certificate.pdf" target="_blank" class="certificate-btn">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="images/HackerRank_Icon-1000px.png" alt="HackerRank">
+                    </div>
+                    <div class="certification-content">
+                        <h2 class="certification-title">HackerRank Skill Certificate - SQL</h2>
+                        <div class="certification-period">February 5, 2025</div>
+                        
+                        <div class="certification-details">
+                            <div class="detail-label">Provider:</div>
+                            <div class="detail-value">HackerRank</div>
+                            
+                            <div class="detail-label">Credential Type:</div>
+                            <div class="detail-value">Skill Assessment</div>
+                            
+                            <div class="detail-label">Issued:</div>
+                            <div class="detail-value">February 5, 2025</div>
+                            
+                            <div class="detail-label">Skills:</div>
+                            <div class="detail-value">Database Queries, Joins, Aggregations, Data Manipulation</div>
+                        </div>
+                        
+                        <a href="PDF's/sql_basic certificate.pdf" target="_blank" class="certificate-btn">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="images/canva.png" alt="Canva">
+                    </div>
+                    <div class="certification-content">
+                        <h2 class="certification-title">Graphic Design Essentials</h2>
+                        <div class="certification-period">November 21, 2024</div>
+                        
+                        <div class="certification-details">
+                            <div class="detail-label">Provider:</div>
+                            <div class="detail-value">The Canva Team</div>
+                            
+                            <div class="detail-label">Credential Type:</div>
+                            <div class="detail-value">Course Certificate</div>
+                            
+                            <div class="detail-label">Issued:</div>
+                            <div class="detail-value">November 21, 2024</div>
+                            
+                            <div class="detail-label">Skills:</div>
+                            <div class="detail-value">Graphic Design Principles, Visual Hierarchy, Color Theory, Composition</div>
+                        </div>
+                        
+                        <a href="PDF's/graphic-design-essentials-certificate.pdf" target="_blank" class="certificate-btn">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="images/canva.png" alt="Canva">
+                    </div>
+                    <div class="certification-content">
+                        <h2 class="certification-title">Canva Essentials</h2>
+                        <div class="certification-period">November 19, 2024</div>
+                        
+                        <div class="certification-details">
+                            <div class="detail-label">Provider:</div>
+                            <div class="detail-value">The Canva Team</div>
+                            
+                            <div class="detail-label">Credential Type:</div>
+                            <div class="detail-value">Course Certificate</div>
+                            
+                            <div class="detail-label">Issued:</div>
+                            <div class="detail-value">November 19, 2024</div>
+                            
+                            <div class="detail-label">Skills:</div>
+                            <div class="detail-value">Canva Platform, Design Creation, Marketing Materials, Visual Content</div>
+                        </div>
+                        
+                        <a href="PDF's/canva-essentials-certificate.pdf" target="_blank" class="certificate-btn">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="images/mimo.jpg" alt="Mimo">
+                    </div>
+                    <div class="certification-content">
+                        <h2 class="certification-title">Python Certificate</h2>
+                        <div class="certification-period">June 11, 2023</div>
+                        
+                        <div class="certification-details">
+                            <div class="detail-label">Provider:</div>
+                            <div class="detail-value">Mimo</div>
+                            
+                            <div class="detail-label">Credential Type:</div>
+                            <div class="detail-value">Course Certificate</div>
+                            
+                            <div class="detail-label">Issued:</div>
+                            <div class="detail-value">June 11, 2023</div>
+                            
+                            <div class="detail-label">Skills:</div>
+                            <div class="detail-value">Python Programming, Data Structures, OOP Concepts, Practical Applications</div>
+                        </div>
+                        
+                        <a href="PDF's/mimo pythoncertificates.pdf" target="_blank" class="certificate-btn">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="certification-card">
+                    <div class="certification-image">
+                        <img src="images/mimo.jpg" alt="Mimo">
+                    </div>
+                    <div class="certification-content">
+                        <h2 class="certification-title">SQL Certificate</h2>
+                        <div class="certification-period">June 17, 2023</div>
+                        
+                        <div class="certification-details">
+                            <div class="detail-label">Provider:</div>
+                            <div class="detail-value">Mimo</div>
+                            
+                            <div class="detail-label">Credential Type:</div>
+                            <div class="detail-value">Course Certificate</div>
+                            
+                            <div class="detail-label">Issued:</div>
+                            <div class="detail-value">June 17, 2023</div>
+                            
+                            <div class="detail-label">Skills:</div>
+                            <div class="detail-value">Database Management, SQL Querying, Data Manipulation, Database Design</div>
+                        </div>
+                        
+                        <a href="PDF's/mimo SQL certificates.pdf" target="_blank" class="certificate-btn">
                             <i class="fas fa-certificate"></i> View Certificate
                         </a>
                     </div>

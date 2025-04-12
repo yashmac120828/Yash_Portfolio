@@ -1,80 +1,536 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<style>
-   main .box{
-    height: 1000px;
-    width: 90vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: left;
-   }
-   main .inbox{
-    height: 333px;
-    width:80vw;
-    margin:20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items:center;
-    border:4px solid #650aac;
-    border-radius: 10px;
-   }
-   .secondSection1 .imgbox{
-    height: 300px;
-    width: 300px;
-   }
-    main img{
-        height: 200px;
-        width: 500px;
-        box-shadow: 0 4px 15px #650aac; 
-        border-radius: 8px;
-        transition: transform 0.3s ease;
-    }
-    main img:hover {
-        transform: scale(1.05);
-    }
-    @media (max-width:768px)
-    {
-        main .box{
-            height:auto;
-            width:auto;
-            display:flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-        }
-        main .inbox{
-            height:auto;
-            width:auto;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items:center;
-        }
-        main .inbox img{
-            height:100px;
-            width: 250px;
-            margin:20px;
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary: #650aac;
+            --primary-light: #8a2be2;
+            --secondary: #b2679a;
+            --dark-bg: #0e050f;
+            --darker-bg: #070207;
+            --card-bg: #1c123b;
+            --card-bg-light: #ffffff;
+            --text-light: #e8d9f1;
+            --text-dark: #31424a;
+            --nav-bg-dark: #170b3b;
+            --nav-bg-light: #31424a;
+            --transition: all 0.4s ease;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.2);
+            --shadow-colored: 0 8px 25px rgba(101, 10, 172, 0.3);
         }
 
-    }
-</style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg, #fff);
+            color: var(--text-dark);
+            transition: var(--transition);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        [data-theme="dark"] body {
+            background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
+            color: var(--text-light);
+        }
+
+
+        /* Container for better centering */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            padding-bottom: 4rem;
+            margin-top: 80px; /* Added to account for fixed nav */
+        }
+
+        /* Roadmap Timeline Styles */
+        .timeline {
+            position: relative;
+            margin: 5rem auto;
+            padding: 3rem 0;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 2.5rem;
+            top: 0;
+            height: 100%;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--secondary), var(--primary));
+            border-radius: 30px;
+           
+            box-shadow: var(--shadow-colored);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 5rem 0;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .timeline-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-icon {
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+            color: white;
+            border-radius: 50%;
+            width: 4.5rem;
+            height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0.25rem;
+            top: 1rem;
+            z-index: 2;
+            box-shadow: var(--shadow-colored);
+            font-size: 1.7rem;
+            transition: var(--transition);
+        }
+
+        .timeline-icon i {
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .timeline-content {
+            margin-left: 7rem;
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-left: 5px solid var(--secondary);
+            width: calc(100% - 7rem);
+        }
+
+        [data-theme="light"] .timeline-content {
+            background-color: var(--card-bg-light);
+            color: var(--text-dark);
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 10px 30px rgba(101, 10, 172, 0.15);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .timeline-content img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 1rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            transform: scale(0.98);
+        }
+
+        .timeline-content:hover img {
+            transform: scale(1);
+            box-shadow: 0 12px 25px rgba(101, 10, 172, 0.4);
+        }
+
+        .timeline-content h2 {
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            color: var(--text-light);
+            position: relative;
+            display: inline-block;
+        }
+
+        [data-theme="light"] .timeline-content h2 {
+            color: var(--primary);
+        }
+
+        .timeline-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+
+        .timeline-content p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 1rem;
+        }
+
+        [data-theme="light"] .timeline-content p {
+            color: var(--text-dark);
+        }
+
+        /* Info grid for better layout */
+        .info-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5rem 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        [data-theme="light"] .info-label {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .timeline {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .timeline {
+                padding: 2rem 1rem;
+            }
+
+            .timeline-content {
+                padding: 2rem;
+            }
+
+            nav .right ul {
+                gap: 0.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.2rem 1rem;
+            }
+
+            nav .left {
+                font-size: 1.5rem;
+                z-index: 200;
+            }
+
+            nav .right ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav .right ul li {
+                margin: 0.5rem 0.6rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline::before {
+                left: 1.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                margin: 3rem 0;
+            }
+
+            .timeline-icon {
+                width: 3.5rem;
+                height: 3.5rem;
+                font-size: 1.2rem;
+                left: 0;
+                top: 0;
+            }
+
+            .timeline-content {
+                margin-left: 5rem;
+                padding: 1.5rem;
+                width: calc(100% - 5rem);
+            }
+
+            .timeline-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .theme {
+                top: 1rem;
+                right: 1rem;
+                height: 3rem;
+                width: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .timeline {
+                width: 95%;
+                margin-top: 5rem;
+            }
+
+            .timeline::before {
+                left: 1rem;
+                width: 4px;
+            }
+
+            .timeline-icon {
+                width: 2.7rem;
+                height: 2.7rem;
+                font-size: 1rem;
+                left: 0;
+            }
+
+            .timeline-content {
+                margin-left: 3.5rem;
+                padding: 1.2rem;
+                border-radius: 1rem;
+                width: calc(100% - 3.5rem);
+            }
+
+            .timeline-content h2 {
+                font-size: 1.3rem;
+            }
+
+            .timeline-content p {
+                font-size: 0.9rem;
+                line-height: 1.6;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+            }
+        }
+
+        /* Mobile Navigation Toggle */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            cursor: pointer;
+            z-index: 200;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav .right {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--nav-bg-dark);
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 100;
+            }
+
+            nav .right.active {
+                right: 0;
+            }
+
+            nav .right ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 2rem;
+            }
+
+            nav .right ul li {
+                margin: 1rem 0;
+                font-size: 1.2rem;
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav .right ul a {
+                width: 100%;
+            }
+        }
+
+        /* Decorative Elements */
+        .decorative-circle {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-light), transparent);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .circle1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: -150px;
+        }
+
+        .circle2 {
+            width: 500px;
+            height: 500px;
+            bottom: 5%;
+            right: -250px;
+        }
+
+        /* Fancy Animation for Timeline Items */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(178, 103, 154, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(178, 103, 154, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(178, 103, 154, 0);
+            }
+        }
+
+        .timeline-icon {
+            animation: pulse 2s infinite;
+        }
+
+        /* Extra fancy touches */
+        .year-badge {
+            position: absolute;
+            
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow);
+            letter-spacing: 1px;
+        }
+
+        /* Page Title Section */
+        .page-title {
+            text-align: center;
+            margin: 5rem 0 2rem;
+            position: relative;
+        }
+
+        .page-title h1 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        [data-theme="dark"] .page-title h1 {
+            color: var(--text-light);
+        }
+
+        .page-title h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--primary));
+            border-radius: 2px;
+        }
+
+        .page-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        [data-theme="dark"] .page-title p {
+            color: #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-title p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+        }
+ 
+
+    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="left">Education</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="right">
                 <ul>
                     <a href="index.html">
@@ -83,14 +539,14 @@
                     <a href="index.html">
                         <li>About Me</li>
                     </a>
-                    <a href="#Education">
+                    <a href="Education.html">
                         <li>Education</li>
                     </a>
                     <a href="index.html">
                         <li>Skills</li>
                     </a>
-                    <a href="Achivements.html">
-                        <li>Achivements</li>
+                    <a href="Certifications.html">
+                        <li>Certifications</li>
                     </a>
                     <a href="Internship.html">
                         <li>Internship</li>
@@ -101,7 +557,7 @@
                     <a href="index.html">
                         <li>Projects</li>
                     </a>
-                    <a href="PDF's/YASHresume.pdf" target="_blank">
+                    <a href="PDF's/Yash Resume-output.pdf" target="_blank">
                         <li>Resume</li>
                     </a>
                     <a href="index.html">
@@ -115,151 +571,156 @@
     </header>
     <main>
         <button class="theme"><i class="fa-solid fa-moon"></i></button>
-        <div class="box">
-            <div class="inbox">
-                <img src="images/pu.jpg" alt="image will load shortly">
-                <div class="vertical-ruler"></div>
-                <h1>B.Tech</h1>
-                <h3>Branch:Computer Science & Engineering
-                    <br>
-                    CGPA:8.28(till 5 th sem)
-                    <br>
-                    Year:2022-2026
-                    <br>
-                    
-                </h3>
-            </h3></div>
-            <div class="inbox">
-                <img src="images/bhs.jpeg" alt="image will load shortly">
-                <div class="vertical-ruler"></div>
-                <h1>HSC</h1>
-                <h3>Name: Baroda High School , Danteshwar 
-                <br>
-                PR:80 PR
-                <br>
-                Year:2020-2022
-                <br>
-                
-            </h3>
-                
-            </h3></div>
-            <div class="inbox">
-                <img src="images/bhs.jpeg" alt="image will load shortly">
-                <div class="vertical-ruler"></div>
-                <h1>SSC</h1>
-                <h3>Name: Baroda High School , Danteshwar
-                <br>
-                PR: 93 PR
-                <br>
-                Year:2018-2020
-                <br>
-                
-            </h3>
+        
+        <!-- Decorative Elements -->
+        <div class="decorative-circle circle1"></div>
+        <div class="decorative-circle circle2"></div>
+        
+        <div class="container">
+            <!-- Page Title -->
+            <div class="page-title">
+                <h1>Academic Journey</h1>
+                <p>A timeline showcasing my educational background and academic achievements throughout the years.</p>
             </div>
+            
+            <section class="timeline" id="Education">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <div class="year-badge">2022–2026</div>
+                        <h2>B.Tech</h2>
+                        <div class="info-grid">
+                            <div class="info-label">Branch:</div>
+                            <div>Computer Science & Engineering</div>
+                            <div class="info-label">CGPA:</div>
+                            <div>8.28 (till 5th sem)</div>
+                            <div class="info-label">Year:</div>
+                            <div>2022–2026</div>
+                        </div>
+                        <img src="images/pu.jpg" alt="University">
+                    </div>
+                </div>
+            
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-school"></i></div>
+                    <div class="timeline-content">
+                        <div class="year-badge">2020–2022</div>
+                        <h2>HSC</h2>
+                        <div class="info-grid">
+                            <div class="info-label">School:</div>
+                            <div>Baroda High School, Danteshwar</div>
+                            <div class="info-label">Percentile:</div>
+                            <div>80</div>
+                            <div class="info-label">Year:</div>
+                            <div>2020–2022</div>
+                        </div>
+                        <img src="images/bhs.jpeg" alt="School">
+                    </div>
+                </div>
+            
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fa-solid fa-school-flag"></i></div>
+                    <div class="timeline-content">
+                        <div class="year-badge">2018–2020</div>
+                        <h2>SSC</h2>
+                        <div class="info-grid">
+                            <div class="info-label">School:</div>
+                            <div>Baroda High School, Danteshwar</div>
+                            <div class="info-label">Percentile:</div>
+                            <div>93</div>
+                            <div class="info-label">Year:</div>
+                            <div>2018–2020</div>
+                        </div>
+                        <img src="images/bhs.jpeg" alt="School">
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
-    <hr class="hr">
-    <footer>
-        <div class="box">
-            <div class="box11">
-                <h1>THANK YOU !!!!</h1>
-                <h3>As we reflect on the many things we are thankful for this Thanksgiving, we want to extend our heartfelt appreciation to you for taking the time to explore our portfolio. Your interest in our work not only fuels our creativity but also reminds us of the connections we build through our art. We hope that as you browse through our projects, you find inspiration and a glimpse into the passion that drives us. Wishing you a Thanksgiving filled with warmth, joy, and cherished moments with loved ones!</h3>
-            </div>
-            <div class="box21">
-                <h2>Quick Links</h2>
-                        <ul>
-                            <a href="index.html">
-                                <li>Home</li>
-                            </a>
-                            <a href="index.html">
-                                <li>About Me</li>
-                            </a>
-                            <a href="#Education">
-                                <li>Education</li>
-                            </a>
-                            <a href="index.html">
-                                <li>Skills</li>
-                            </a>
-                            <a href="Achivements.html">
-                                <li>Achivements</li>
-                            </a>
-                            <a href="Internship.html">
-                                <li>Internship</li>
-                            </a>
-                            <a href="index.html">
-                                <li>Services</li>
-                            </a>
-                            <a href="index.html">
-                                <li>Projects</li>
-                            </a>
-                            <a href="PDF's/YASHresume.pdf" target="_blank">
-                                <li>Resume</li>
-                            </a>
-                            <a href="index.html">
-                                <li>Contact Me</li>
-                            </a>
-                            
-                        </ul>
-            </div>
-            <div class="box31">
-                <h2>Contact Me</h2>
-                <h3>Ph    | +91 8780364562</h3>
-                <h3>Email | yashmahhi1408@gmail.com</h3>
-                <h3>       Vadodara-390004</h3>
-            </div>
-        </div>
-    </footer>
+    
+    <script>
+        // Theme Toggle
+        const themeButton = document.querySelector(".theme");
+        let currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Apply saved theme on page load
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateThemeButton();
+        
+        // Toggle theme when button is clicked
+        themeButton.addEventListener('click', () => {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            localStorage.setItem('theme', currentTheme);
+            updateThemeButton();
+        });
+        
+        function updateThemeButton() {
+            if (currentTheme === 'dark') {
+                themeButton.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            } else {
+                themeButton.innerHTML = '<i class="fa-solid fa-moon"></i>';
+            }
+        }
+        
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navRight = document.querySelector('nav .right');
+        
+        hamburger.addEventListener('click', () => {
+            navRight.classList.toggle('active');
+            
+            // Animate hamburger to X
+            const spans = hamburger.querySelectorAll('span');
+            
+            if (navRight.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav .right ul a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navRight.classList.contains('active')) {
+                    navRight.classList.remove('active');
+                    
+                    const spans = hamburger.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        });
+        
+        // Animate timeline items on scroll
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        function checkScroll() {
+            timelineItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (itemTop < windowHeight * 0.8) {
+                    item.classList.add('active');
+                }
+            });
+        }
+        
+        // Add initial active class after page load
+        window.addEventListener('load', () => {
+            setTimeout(checkScroll, 300);
+        });
+        
+        // Check on scroll
+        window.addEventListener('scroll', checkScroll);
+    </script>
+    <script src="app.js"></script>
 </body>
-<script>
-let body = document.querySelector("body");
-let nav = document.querySelectorAll("nav");
-let themeButton = document.querySelector(".theme");
-let hr = document.querySelectorAll(".hr"); 
-let theme = localStorage.getItem('theme') || 'light'; // Default to 'light'
-let p = document.querySelectorAll(".p");
-
-if (themeButton) {
-    themeButton.addEventListener('click', toggleTheme);
-}
-
-function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    if (theme === 'dark') {
-        themeButton.innerHTML = `<i class="fa-regular fa-moon"></i>`;
-        themeButton.style.backgroundColor = "#b2679a"; 
-        body.style.backgroundColor = "#0e050f";
-        body.style.color = "#fff";
-        p.forEach(px => {
-            px.style.color = "#fff";
-        });
-        hr.forEach(h => {
-            h.style.borderColor = "#170b3b";
-        });
-        nav.forEach(n => {
-            n.style.backgroundColor = "#170b3b";
-        });
-    } else {
-        themeButton.innerHTML = `<i class="fa-solid fa-sun"></i>`;
-        themeButton.style.backgroundColor = "#b2679a"; 
-        body.style.backgroundColor = "white";
-        body.style.color = "#31424a";
-        p.forEach(px => {
-            px.style.color = "#31424a";
-        });
-        nav.forEach(n => {
-            n.style.backgroundColor = "#31424a";
-        });
-    }
-}
-
-function toggleTheme() {
-    theme = (theme === 'dark') ? 'light' : 'dark'; 
-    applyTheme(theme);
-}
-document.addEventListener("DOMContentLoaded", () => {
-    applyTheme(theme);
-});
-
-</script>
 </html>
