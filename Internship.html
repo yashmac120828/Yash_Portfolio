@@ -8,9 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
     <style>
-          :root {
+        :root {
             --primary: #650aac;
             --primary-light: #8a2be2;
             --secondary: #b2679a;
@@ -37,7 +36,7 @@
         }
 
         body {
-            background-color: var(--light-bg, #fff);
+            background-color: #fff;
             color: var(--text-dark);
             transition: var(--transition);
             overflow-x: hidden;
@@ -50,150 +49,154 @@
             background: linear-gradient(to bottom, var(--dark-bg), var(--darker-bg));
             color: var(--text-light);
         }
-/* ===== Navigation Styles ===== */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: var(--nav-bg-dark);
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    box-shadow: var(--shadow);
-}
 
-[data-theme="light"] nav {
-    background-color: var(--nav-bg-light);
-}
+        /* ===== Navigation Styles ===== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--nav-bg-dark);
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
 
-nav .left {
-    font-size: 1.8rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--secondary), var(--primary-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    --text-fill-color: transparent;
-}
+        [data-theme="light"] nav {
+            background-color: var(--nav-bg-light);
+        }
 
-nav .right ul {
-    display: flex;
-    list-style: none;
-    gap: 1.5rem;
-    align-items: center;
-}
+        nav .left {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-nav .right ul a {
-    text-decoration: none;
-    color: var(--text-light);
-    transition: var(--transition);
-    font-weight: 500;
-}
+        nav .right ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
 
-nav .right ul a:hover {
-    color: var(--primary-light);
-}
+        nav .right ul li {
+            position: relative;
+            padding: 0.5rem 0;
+        }
 
-nav .right ul li {
-    position: relative;
-    padding: 0.5rem 0;
-}
+        nav .right ul a {
+            text-decoration: none;
+            color: var(--text-light);
+            transition: var(--transition);
+            font-weight: 500;
+        }
 
-nav .right ul li::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-light);
-    transition: var(--transition);
-}
+        nav .right ul a:hover {
+            color: var(--primary-light);
+        }
 
-nav .right ul li:hover::after {
-    width: 100%;
-}
+        nav .right ul li::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-light);
+            transition: var(--transition);
+        }
 
-/* Hamburger Menu */
-.hamburger {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    z-index: 200;
-    position: relative;
-}
+        nav .right ul li:hover::after {
+            width: 100%;
+        }
 
-.hamburger span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    border-radius: 3px;
-    transition: var(--transition);
-}
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 21px;
+            z-index: 2000;
+            position: relative;
+        }
 
-/* Mobile Navigation Menu Styles */
-@media (max-width: 768px) {
-    nav {
-        padding: 1.2rem 1rem;
-    }
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: white;
+            border-radius: 3px;
+            transition: var(--transition);
+        }
 
-    nav .left {
-        font-size: 1.5rem;
-        z-index: 200;
-    }
+        /* Mobile Navigation Menu Styles */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1.2rem 1rem;
+            }
 
-    .hamburger {
-        display: flex;
-    }
+            nav .left {
+                font-size: 1.5rem;
+                z-index: 2000;
+            }
 
-    nav .right {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background-color: var(--nav-bg-dark);
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 100;
-    }
+            .hamburger {
+                display: flex;
+            }
 
-    [data-theme="light"] nav .right {
-        background-color: var(--nav-bg-light);
-    }
+            nav .right {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background-color: var(--nav-bg-dark);
+                transition: var(--transition);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1500;
+            }
 
-    nav .right.active {
-        right: 0;
-    }
+            [data-theme="light"] nav .right {
+                background-color: var(--nav-bg-light);
+            }
 
-    nav .right ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        padding: 2rem;
-    }
+            nav .right.active {
+                right: 0;
+            }
 
-    nav .right ul li {
-        margin: 1rem 0;
-        font-size: 1.2rem;
-        width: 100%;
-        text-align: center;
-    }
-    
-    nav .right ul a {
-        width: 100%;
-    }
-}
+            nav .right ul {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding: 2rem;
+            }
+
+            nav .right ul li {
+                margin: 1rem 0;
+                font-size: 1.2rem;
+                width: 100%;
+                text-align: center;
+            }
+            
+            nav .right ul a {
+                width: 100%;
+                display: block;
+            }
+        }
+
         /* Container for better centering */
         .container {
             width: 100%;
@@ -210,13 +213,13 @@ nav .right ul li:hover::after {
             position: relative;
             width: 100%;
             padding-bottom: 4rem;
-            margin-top: 80px; /* Added to account for fixed nav */
+            margin-top: 80px;
         }
 
         /* Theme Toggle Button Styling */
         .theme {
             position: fixed;
-            top: 1.5rem;
+            top: 90px;
             right: 1.5rem;
             width: 3.5rem;
             height: 3.5rem;
@@ -229,10 +232,9 @@ nav .right ul li:hover::after {
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            z-index: 100;
+            z-index: 999;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            margin-top:50px;
         }
 
         .theme:hover {
@@ -488,7 +490,7 @@ nav .right ul li:hover::after {
             }
             
             .theme {
-                top: 1rem;
+                top: 70px;
                 right: 1rem;
                 width: 3rem;
                 height: 3rem;
@@ -515,7 +517,7 @@ nav .right ul li:hover::after {
 <body>
     <header>
         <nav>
-            <div class="left">Certifications</div>
+            <div class="left">Internships</div>
             <div class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
                 <span></span>
                 <span></span>
@@ -523,44 +525,23 @@ nav .right ul li:hover::after {
             </div>
             <div class="right">
                 <ul>
-                    <a href="index.html">
-                        <li>Home</li>
-                    </a>
-                    <a href="index.html">
-                        <li>About Me</li>
-                    </a>
-                    <a href="Education.html">
-                        <li>Education</li>
-                    </a>
-                    <a href="index.html">
-                        <li>Skills</li>
-                    </a>
-                    <a href="Certifications.html" aria-current="page">
-                        <li>Certifications</li>
-                    </a>
-                    <a href="Internship.html">
-                        <li>Internship</li>
-                    </a>
-                    <a href="index.html">
-                        <li>Services</li>
-                    </a>
-                    <a href="index.html">
-                        <li>Projects</li>
-                    </a>
-                    <a href="PDF's/yashmachhi_resume.pdf" target="_blank">
-                        <li>Resume</li>
-                    </a>
-                    <a href="index.html">
-                        <li>Contact Me</li>
-                    </a>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Me</a></li>
+                    <li><a href="Education.html">Education</a></li>
+                    <li><a href="index.html#skills">Skills</a></li>
+                    <li><a href="Certifications.html">Certifications</a></li>
+                    <li><a href="Internship.html" aria-current="page">Internship</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="PDF's/yashmachhi_resume.pdf" target="_blank">Resume</a></li>
+                    <li><a href="index.html#contact">Contact Me</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     
-    
     <main>
-        <button class="theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="theme" aria-label="Switch theme"><i class="fa-solid fa-moon"></i></button>
         
         <!-- Decorative Elements -->
         <div class="decorative-circle circle1"></div>
@@ -580,7 +561,7 @@ nav .right ul li:hover::after {
                     </div>
                     <div class="internship-content">
                         <h2 class="internship-title">Frontend Developer</h2>
-                        <div class="internship-period">March-2025 to April-2025</div>
+                        <div class="internship-period">March 2025 to April 2025</div>
                         
                         <div class="internship-details">
                             <div class="detail-label">Company:</div>
@@ -593,21 +574,21 @@ nav .right ul li:hover::after {
                             <div class="detail-value">2 Months</div>
                             
                             <div class="detail-label">Responsibilities:</div>
-                            <div class="detail-value">Developed and maintained responsive UI components using HTML, CSS, JavaScript, and React.js.Collaborated with cross-functional team members to implement user-friendly features and ensure code quality.
-
-                            </div>
+                            <div class="detail-value">Developed and maintained responsive UI components using HTML, CSS, JavaScript, and React.js. Collaborated with cross-functional team members to implement user-friendly features and ensure code quality.</div>
                         </div>
-                        
-                        
+                        <a href="images/MACHHI_YASH_ASHISH_INTERNSHIP_CERTIFICATE (1).png" target="_blank" class="certificate-btn">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
                     </div>
                 </div>
+                
                 <div class="internship-card">
                     <div class="internship-image">
                         <img src="images/horizon.jpg" alt="Horizon TECH">
                     </div>
                     <div class="internship-content">
                         <h2 class="internship-title">Graphic Designer</h2>
-                        <div class="internship-period">April, 2023</div>
+                        <div class="internship-period">April 2023</div>
                         
                         <div class="internship-details">
                             <div class="detail-label">Company:</div>
@@ -617,7 +598,7 @@ nav .right ul li:hover::after {
                             <div class="detail-value">Graphic Designer</div>
                             
                             <div class="detail-label">Duration:</div>
-                            <div class="detail-value">1 Months</div>
+                            <div class="detail-value">1 Month</div>
                             
                             <div class="detail-label">Responsibilities:</div>
                             <div class="detail-value">Created engaging visual content, designed marketing materials, developed brand assets, and collaborated with cross-functional teams on design projects.</div>
@@ -633,8 +614,8 @@ nav .right ul li:hover::after {
     </main>
     
     <script>
-         // Theme Toggle
-         const themeButton = document.querySelector(".theme");
+        // Theme Toggle
+        const themeButton = document.querySelector(".theme");
         let currentTheme = localStorage.getItem('theme') || 'light';
         
         // Apply saved theme on page load
@@ -699,24 +680,23 @@ nav .right ul li:hover::after {
                 }
             });
         });
-        // Animation for certification cards
-const certificationCards = document.querySelectorAll('.certification-card');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.1
-});
 
-certificationCards.forEach(card => {
-    observer.observe(card);
-});
-        
-        
+        // Animation for internship cards
+        const internshipCards = document.querySelectorAll('.internship-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        internshipCards.forEach(card => {
+            observer.observe(card);
+        });
     </script>
 </body>
 </html>

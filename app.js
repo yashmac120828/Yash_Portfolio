@@ -713,3 +713,5 @@ const socialIcons = document.querySelectorAll('.social-icon');
                 }, parseInt(el.style.animationDelay) * 1000);
             });
         });
+
+         
