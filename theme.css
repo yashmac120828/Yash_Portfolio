@@ -52,7 +52,7 @@ section,
 .projects-section,
 .fifthSection,
 #AboutMe {
-    background-color: var(--bg-primary);
+    
     color: var(--text-primary);
 }
 
@@ -65,7 +65,7 @@ section,
 .project-card,
 .contact-container,
 .card {
-    background-color: var(--card-bg);
+    
     color: var(--text-primary);
     border-color: var(--border-color);
 }

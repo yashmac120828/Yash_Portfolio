@@ -47,8 +47,10 @@ function applyTheme(theme) {
     if (theme === 'midnight') {
         themeButton.innerHTML = `<i class="fa-solid fa-sun"></i>`;
         themeButton.style.backgroundColor = "var(--accent)";
-        if (navMenu) {
+        if (navMenu && window.innerWidth <= 900) {
             navMenu.style.backgroundColor = "#170b3b";
+        } else if (navMenu) {
+            navMenu.style.backgroundColor = "transparent";
         }
 
         hr.forEach(h => {
@@ -184,12 +186,12 @@ function applyTheme(theme) {
     } else {
         themeButton.innerHTML = `<i class="fa-regular fa-moon"></i>`;
         themeButton.style.backgroundColor = "var(--accent)";
-        if (navMenu) {
+        if (navMenu && window.innerWidth <= 900) {
             navMenu.style.backgroundColor = "white";
+        } else if (navMenu) {
+            navMenu.style.backgroundColor = "transparent";
         }
-       
-       
-       
+        
         nav.forEach(n => {
             n.style.backgroundColor = "#31424a";
         });
@@ -373,10 +375,25 @@ function sortSkillsAlphabetically() {
     });
 }
 
+// Function to handle nav menu background based on screen size
+function updateNavMenuBackground() {
+    const navMenu = document.querySelector('.right ul');
+    if (!navMenu) return;
+    
+    if (window.innerWidth <= 900) {
+        navMenu.style.backgroundColor = theme === 'midnight' ? "#170b3b" : "white";
+    } else {
+        navMenu.style.backgroundColor = "transparent";
+    }
+}
+
 // Main initialization function
 document.addEventListener('DOMContentLoaded', function() {
     // Apply theme based on user preference
     applyTheme(theme);
+    
+    // Add resize listener for nav menu background
+    window.addEventListener('resize', updateNavMenuBackground);
     
     // Theme toggle event listener
     if (themeButton) {
