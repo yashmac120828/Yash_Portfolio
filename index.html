@@ -11,7 +11,9 @@
 <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet">
+<link rel="stylesheet" href="theme.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="footer.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -581,17 +583,39 @@
         </section>
 
         <hr class="hr">
-        <section class="projects-section" id="Projects">
-            <h2 class="section-title">Projects</h2>
+        <section class="projects-section">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
 
-            <div class="projects-container">
-                <!-- Netflix Clone Project -->
+        <div class="section-header">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">Explore my work across different technologies and frameworks, showcasing my journey as a developer</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="project-tabs">
+            <button class="tab-button active" data-tab="frontend">Frontend</button>
+            <button class="tab-button" data-tab="backend">Backend</button>
+            <button class="tab-button" data-tab="fullstack">Full Stack</button>
+        </div>
+
+        <!-- Frontend Projects -->
+        <div class="tab-content active" id="frontend">
+            <div class="category-header">
+                <h3 class="category-title">Frontend Development</h3>
+                <p class="category-description">User interface clones and responsive web applications</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Netflix Clone -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/lightnetflix.png" alt="Netflix Clone Preview">
+                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500&h=300&fit=crop" alt="Netflix Clone Preview">
                         <div class="project-overlay">
                             <div class="project-logo">
-                                <img src="images/netflix.png" alt="Netflix Logo">
+                                <img src="./images/netflix.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -599,40 +623,30 @@
                         <h3 class="project-title">Netflix UI-UX Clone</h3>
                         <div class="project-role">Frontend Developer</div>
                         <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
                             <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive Design</span>
                         </div>
-                        <p class="project-description">A pixel-perfect recreation of Netflix's streaming platform
-                            interface, featuring responsive design and dynamic content loading.</p>
+                        <p class="project-description">A pixel-perfect recreation of Netflix's streaming platform interface, featuring responsive design, dynamic content loading, and smooth animations.</p>
                         <div class="project-links">
-                            <a href="https://github.com/yashmac120828/NetflixUI-UXClone.git" class="project-link">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
+                            <a href="https://github.com/yashmac120828/NetflixUI-UXClone.git" class="project-link" target="_blank">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
                                 </svg>
                                 GitHub
                             </a>
-                            <!-- <a href="https://netflixuiuxclone.bytexl.live/" class="project-link" target="_blank">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                      </svg>
-                      Live Link
-                    </a> -->
                         </div>
                     </div>
                 </div>
 
-                <!-- Amazon Clone Project -->
+                <!-- Amazon Clone -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/amazon.png" alt="Amazon Clone Preview">
+                        <img src="./images/amazon.png" alt="Amazon Clone Preview">
                         <div class="project-overlay">
                             <div class="project-logo">
-                                <img src="images/amazon.png" alt="Amazon Logo">
+                                <img src="./images/amazon.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -640,36 +654,85 @@
                         <h3 class="project-title">Amazon UI-UX Clone</h3>
                         <div class="project-role">Frontend Developer</div>
                         <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">Grid Layout</span>
+                            <span class="tech-tag">Flexbox</span>
                         </div>
-                        <p class="project-description">A detailed recreation of Amazon's e-commerce interface with
-                            responsive product grids, navigation, and checkout flow simulation.</p>
+                        <p class="project-description">A detailed recreation of Amazon's e-commerce interface with responsive product grids, navigation components, and checkout flow simulation.</p>
                         <div class="project-links">
-                            <a href="https://github.com/yashmac120828/AmazoneUI-UXClone.git" class="project-link">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
+                            <a href="https://github.com/yashmac120828/AmazoneUI-UXClone.git" class="project-link" target="_blank">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
                                 </svg>
                                 GitHub
                             </a>
-
                         </div>
                     </div>
                 </div>
-                <!-- react+appwrite project = BlogSphere -->
+            </div>
+        </div>
+
+        <!-- Backend Projects -->
+        <div class="tab-content" id="backend">
+            <div class="category-header">
+                <h3 class="category-title">Backend Development</h3>
+                <p class="category-description">Server-side applications and API development</p>
+            </div>
+            <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/react_appwrite.jpeg" alt="BlogSphere Project Preview">
+                        <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=500&h=300&fit=crop" alt="Backend Project Preview">
                         <div class="project-overlay">
                             <div class="project-logo">
-                                <img src="images/react_appwrite.jpeg" alt="React Logo">
+                               <img src="images/nodeJS.png" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">BlogSphere – Full Stack Blogging Platform</h3>
+                        <h3 class="project-title">Backend Project Management System</h3>
+                        <div class="project-role">Backend Developer</div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag">Swagger</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <p class="project-description">A comprehensive backend system with MongoDB integration, JWT-based authentication, and auto-generated API documentation using Swagger and Redoc. Features include modular architecture and developer-friendly landing page.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/yashmac120828/Project_Management-Backend" class="project-link" target="_blank">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Stack Projects -->
+        <div class="tab-content" id="fullstack">
+            <div class="category-header">
+                <h3 class="category-title">Full Stack Development</h3>
+                <p class="category-description">Complete web applications with frontend and backend integration</p>
+            </div>
+            <div class="projects-grid">
+                <!-- BlogSphere -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/react_appwrite.jpeg" alt="BlogSphere Preview">
+                        <div class="project-overlay">
+                            <div class="project-logo">
+                               <img src="images/react.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">BlogSphere - Blogging Platform</h3>
                         <div class="project-role">Full Stack Developer</div>
                         <div class="project-tech">
                             <span class="tech-tag">React 19</span>
@@ -680,148 +743,55 @@
                             <span class="tech-tag">Appwrite</span>
                             <span class="tech-tag">Tailwind CSS</span>
                             <span class="tech-tag">Vite</span>
-                            <span class="tech-tag">PostCSS</span>
                         </div>
-                        <p class="project-description">
-                            A full stack blogging platform enabling users to create, edit, and manage blog posts with
-                            rich text editing.
-                            Features include authentication, role-based access, real-time database updates with
-                            Appwrite, and a responsive UI powered by Tailwind CSS.
-                        </p>
+                        <p class="project-description">A full-stack blogging platform enabling users to create, edit, and manage blog posts with rich text editing. Features authentication, role-based access, real-time database updates with Appwrite, and a responsive UI.</p>
                         <div class="project-links">
                             <a href="https://github.com/yashmac120828/BlogSphere-Blogging-Platform" class="project-link" target="_blank">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
                                 </svg>
                                 GitHub
                             </a>
-                            <!-- Future live link -->
-                            <!--
-      <a href="https://blogsphere.live/" class="project-link" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-          <polyline points="15 3 21 3 21 9"></polyline>
-          <line x1="10" y1="14" x2="21" y2="3"></line>
-        </svg>
-        Live Link
-      </a>
-      -->
                         </div>
                     </div>
                 </div>
 
-
-                <!-- backend project management project -->
+                <!-- TechCirculo -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/backend_img.png" alt="Backend Project Preview">
+                        <img src="images/techcirculo_image.png" alt="TechCirculo Preview">
                         <div class="project-overlay">
                             <div class="project-logo">
-                                <img src="images/nodeJS.png" alt="Node.js Logo">
+                                <img src="images/techcirculo_image.png" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3 class="project-title">Backend Project (Phase 1)</h3>
-                        <div class="project-role">Backend Developer</div>
+                        <h3 class="project-title">TechCirculo Community Platform</h3>
+                        <div class="project-role">Full Stack Developer</div>
                         <div class="project-tech">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">Express.js</span>
-                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Spring Boot</span>
                             <span class="tech-tag">JWT</span>
-                            <span class="tech-tag">Swagger</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">AWS</span>
                         </div>
-                        <p class="project-description">
-                            A modular backend system with MongoDB integration, JWT-based authentication, and
-                            auto-generated API documentation using Swagger and Redoc. Includes a developer landing page
-                            for quick project insights.
-                        </p>
+                        <p class="project-description">A comprehensive student community platform connecting university students and faculty. Features role-based access control, real-time notifications, community posts, and announcements with secure Spring Boot backend.</p>
                         <div class="project-links">
-                            <a href="https://github.com/yashmac120828/Project_Management-Backend" class="project-link"
-                                target="_blank">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path
-                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                                    </path>
+                            <a href="https://github.com/yashmac120828/TechCirculo" class="project-link" target="_blank">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
                                 </svg>
                                 GitHub
                             </a>
-                            <!-- Future live link -->
-                            <!--
-      <a href="https://backendproject-phase1.live/" class="project-link" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-          <polyline points="15 3 21 3 21 9"></polyline>
-          <line x1="10" y1="14" x2="21" y2="3"></line>
-        </svg>
-        Live Link
-      </a>
-      -->
                         </div>
                     </div>
                 </div>
-
-                <!-- Techcirculo project major -->
-                 <div class="project-card">
-    <div class="project-image">
-        <img src="images/techcirculo_image.png" alt="TechCirculo Project Preview">
-        <div class="project-overlay">
-            <div class="project-logo">
-                <img src="images/techcirculo_image.png" alt="Spring Boot Logo">
             </div>
         </div>
-    </div>
-    <div class="project-content">
-        <h3 class="project-title">TechCirculo (In Building Process)</h3>
-        <div class="project-role">Full Stack Developer</div>
-        <div class="project-tech">
-            <span class="tech-tag">HTML5</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">Spring Boot</span>
-            <span class="tech-tag">JWT</span>
-            <span class="tech-tag">MySQL</span>
-            <span class="tech-tag">AWS</span>
-        </div>
-        <p class="project-description">
-            TechCirculo is a student community platform under development, designed to connect university
-            students and faculty. Features include role-based access control, real-time notifications,
-            community posts, and announcements — all powered by a secure Spring Boot backend and a
-            responsive frontend.
-        </p>
-        <div class="project-links">
-            <a href="https://github.com/yashmac120828/TechCirculo" class="project-link" target="_blank">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path
-                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                    </path>
-                </svg>
-                GitHub
-            </a>
-            <!-- Future live link -->
-            <!--
-            <a href="https://techcirculo.live/" class="project-link" target="_blank">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-                Live Link
-            </a>
-            -->
-        </div>
-    </div>
-</div>
-
-
-            </div>
-
-            <!-- Decorative elements -->
-            <div class="decoration decoration-1"></div>
-            <div class="decoration decoration-2"></div>
-        </section>
+    </section>
         <hr class="hr">
         <section class="fifthSection fade-in" id="Contact-Me">
             <h1 class="section-title animate" style="animation-delay: 0.1s">Get In Touch</h1>
@@ -967,7 +937,7 @@
             </div>
         </section>
     </main>
-    <footer class="modern-footer" style="margin-top:15px;">
+    <footer class="modern-footer">
         <div class="footer-container">
             <!-- Appreciation Section -->
             <div class="footer-section appreciation">

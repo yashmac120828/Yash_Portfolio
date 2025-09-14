@@ -40,35 +40,16 @@ let footerContactIcons = document.querySelectorAll("footer .contact-info i");
 // Theme functions
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
+    const navMenu = document.querySelector('.right ul');
 
     if (theme === 'midnight') {
-        // Midnight Theme
-        
-        themeButton.innerHTML = `<i class="fa-regular fa-moon"></i>`;
-        themeButton.style.backgroundColor = "#a970ff";
-        infoItem.forEach(item => {
-            item.style.color = "black";
-        });
-        navMenu.style.backgroundColor="#161b22";
-        body.style.backgroundColor = "#0d1117";
-        body.style.color = "#c9d1d9";
-        skillSection.style.backgroundColor = "#0d1117";
-        SectionTitle.forEach(title => {    
-            title.style.color = "#c9d1d9";
-        })
-        categoryBtn.forEach(btn => {
-            btn.style.backgroundColor = "#c9d1d9";
-        });
-        projectContent.forEach(item => {  
-            item.style.backgroundColor="#c9d1d9";
-        });
-        skillCard.forEach(btn => {
-            btn.style.backgroundColor = "#c9d1d9";
-        });
-        p.forEach(px => {
-            px.style.color = "#c9d1d9";
-        });
+        themeButton.innerHTML = `<i class="fa-solid fa-sun"></i>`;
+        themeButton.style.backgroundColor = "var(--accent)";
+        if (navMenu) {
+            navMenu.style.backgroundColor = "#170b3b";
+        }
 
         hr.forEach(h => {
             h.style.borderColor = "#30363d";
@@ -201,28 +182,11 @@ function applyTheme(theme) {
         }
         
     } else {
-        // Light Theme
-        
-        themeButton.innerHTML = `<i class="fa-solid fa-sun"></i>`;
-        themeButton.style.backgroundColor = "#b2679a";
-        skillSection.style.backgroundColor = "white";
-        body.style.backgroundColor = "white";
-        body.style.color = "black";
-        SectionTitle.forEach(title => {    
-            title.style.color = "black";
-        })
-        navMenu.style.backgroundColor="#31424a";
-       skillCard.forEach(btn => {   btn.style.backgroundColor = "white";});
-        categoryBtn.forEach(btn => {
-            btn.style.backgroundColor = "white";
-        });
-        projectContent.forEach(item => {  
-            item.style.backgroundColor="white";
-        });
-        p.forEach(px => {
-            px.style.color = "#31424a";
-        });
-        // navMenu.style.backgroundColor="white";
+        themeButton.innerHTML = `<i class="fa-regular fa-moon"></i>`;
+        themeButton.style.backgroundColor = "var(--accent)";
+        if (navMenu) {
+            navMenu.style.backgroundColor = "white";
+        }
        
        
        
@@ -713,5 +677,51 @@ const socialIcons = document.querySelectorAll('.social-icon');
                 }, parseInt(el.style.animationDelay) * 1000);
             });
         });
+ // Tab switching functionality
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
 
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                // Show corresponding tab content
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe project cards for staggered animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+        });
          
+
+
+        
