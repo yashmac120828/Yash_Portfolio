@@ -4,7 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yash Portfolio</title>
+    <title>Yash Machhi - Full Stack Developer & UI/UX Designer | Professional Portfolio</title>
+    <meta name="description" content="Yash Machhi is a skilled Full Stack Developer and UI/UX Designer specializing in React, Node.js, Spring Boot, and modern web technologies. View my portfolio of innovative projects and professional services.">
+    <meta name="keywords" content="Yash Machhi, Full Stack Developer, UI/UX Designer, React Developer, Node.js, Spring Boot, Web Development, Freelance Developer">
+    <meta name="author" content="Yash Machhi">
+    <meta property="og:title" content="Yash Machhi - Full Stack Developer & UI/UX Designer">
+    <meta property="og:description" content="Professional portfolio showcasing innovative web development projects and design work">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yashmachhi-portfolio.bytexl.live/">
 </head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +20,7 @@
     rel="stylesheet">
 <link rel="stylesheet" href="theme.css">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="enhanced.css">
 <link rel="stylesheet" href="footer.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -23,7 +31,12 @@
 <body>
     <header>
         <nav>
-            <div class="left">Yash's Portfolio</div>
+            <div class="left">
+                <div class="logo-container">
+                    <span class="logo-monogram">YM</span>
+                    <span class="logo-text">Yash's Portfolio</span>
+                </div>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -73,13 +86,24 @@
             <div class="hero-content">
                 <div class="leftSection">
                     <div class="intro-text">
-                        <h1 class="greeting">Hi, I'm <span class="highlight">Yash</span></h1>
+                        <div class="hero-badge">
+                            <span class="logo-monogram-hero">YM</span>
+                            <span>Available for Hire</span>
+                        </div>
+                        <h1 class="greeting">Hi, I'm <span class="highlight">Yash Machhi</span></h1>
                         <h2 class="profession">A Passionate <span id="element"></span></h2>
-                        <p class="tagline">Transforming ideas into visually stunning digital experiences</p>
+                        <p class="tagline">Transforming ideas into visually stunning digital experiences with modern web technologies</p>
 
                         <div class="cta-buttons">
-                            <a href="#Contact-Me" class="primary-btn">Let's Connect</a>
-                            <a href="#Projects" class="secondary-btn">View My Work</a>
+                            <a href="#Contact-Me" class="primary-btn hire-me-btn">
+                                <i class="fas fa-rocket"></i> Hire Me
+                            </a>
+                            <a href="#Projects" class="secondary-btn">
+                                <i class="fas fa-briefcase"></i> View My Work
+                            </a>
+                            <a href="PDF's/yashmachhi_resume.pdf" target="_blank" class="outline-btn">
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
                         </div>
                     </div>
 
@@ -198,6 +222,124 @@
                 <div class="shape shape-2"></div>
                 <div class="shape shape-3"></div>
                 <div class="shape shape-4"></div>
+            </div>
+        </section>
+        <hr class="hr">
+        
+        <!-- Why Work With Me Section -->
+        <section id="WhyMe" class="why-me-section fade-in-up">
+            <div class="section-header-centered">
+                <h2 class="section-title">Why Work With Me</h2>
+                <p class="section-subtitle">Professional expertise meets creative innovation</p>
+            </div>
+            
+            <div class="why-me-grid">
+                <div class="why-me-card fade-in-up">
+                    <div class="why-me-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Fast & Efficient Delivery</h3>
+                    <p>I prioritize deadlines and deliver high-quality work on time, every time. Your project success is my commitment.</p>
+                </div>
+                
+                <div class="why-me-card fade-in-up">
+                    <div class="why-me-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Modern Tech Stack</h3>
+                    <p>Expertise in React, Node.js, Spring Boot, and latest web technologies to build scalable, future-proof applications.</p>
+                </div>
+                
+                <div class="why-me-card fade-in-up">
+                    <div class="why-me-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Responsive Design</h3>
+                    <p>Every project is built mobile-first, ensuring perfect user experience across all devices and screen sizes.</p>
+                </div>
+                
+                <div class="why-me-card fade-in-up">
+                    <div class="why-me-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Clear Communication</h3>
+                    <p>Regular updates, transparent process, and collaborative approach. You're involved every step of the way.</p>
+                </div>
+                
+                <div class="why-me-card fade-in-up">
+                    <div class="why-me-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Quality Assurance</h3>
+                    <p>Rigorous testing, clean code, and best practices ensure your project is reliable, secure, and maintainable.</p>
+                </div>
+                
+                <div class="why-me-card fade-in-up">
+                    <div class="why-me-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Post-Launch Support</h3>
+                    <p>Ongoing support and maintenance available to keep your website running smoothly after launch.</p>
+                </div>
+            </div>
+        </section>
+        <hr class="hr">
+        
+        <!-- Development Process Section -->
+        <section id="Process" class="process-section">
+            <div class="section-header-centered">
+                <h2 class="section-title">My Development Process</h2>
+                <p class="section-subtitle">A systematic approach to bring your vision to life</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step slide-in-left">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3><i class="fas fa-comments"></i> Discovery & Planning</h3>
+                        <p>We discuss your goals, target audience, and project requirements. I analyze your needs and create a detailed project roadmap.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step slide-in-right">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3><i class="fas fa-pencil-ruler"></i> Design & Prototype</h3>
+                        <p>Creating wireframes and mockups to visualize the user interface. You'll see exactly how your project will look before development begins.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step slide-in-left">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3><i class="fas fa-laptop-code"></i> Development</h3>
+                        <p>Building your project with clean, efficient code using modern technologies. Regular updates keep you informed of progress.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step slide-in-right">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3><i class="fas fa-vial"></i> Testing & QA</h3>
+                        <p>Comprehensive testing across devices and browsers to ensure everything works flawlessly. Bug fixes and optimizations applied.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step slide-in-left">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3><i class="fas fa-rocket"></i> Launch & Deploy</h3>
+                        <p>Deploying your project to production with proper setup, optimization, and configuration for peak performance.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step slide-in-right">
+                    <div class="step-number">06</div>
+                    <div class="step-content">
+                        <h3><i class="fas fa-tools"></i> Support & Maintain</h3>
+                        <p>Ongoing support, updates, and maintenance to ensure your project continues to perform at its best.</p>
+                    </div>
+                </div>
             </div>
         </section>
         <hr class="hr">
@@ -387,59 +529,150 @@
             </div>
         </section>
         <hr class="hr">
-        <section id="Services">
-            <h1 class="section-title">Our Services</h1>
-            <p class="section-subtitle" style="margin-bottom:40px">Crafting digital experiences that captivate, engage,
-                and drive results through innovative design and cutting-edge technology.</p>
+        <section id="Services" class="services-section-enhanced">
+            <div class="section-header-centered">
+                <h1 class="section-title">Professional Services & Pricing</h1>
+                <p class="section-subtitle">Transform your digital presence with custom web solutions tailored to your needs</p>
+            </div>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
+            <!-- Service Categories -->
+            <div class="services-categories">
+                <div class="service-category-card fade-in-up">
+                    <div class="service-icon-large">
+                        <i class="fas fa-palette"></i>
+                    </div>
                     <h3 class="service-title">Frontend & UI/UX Design</h3>
                     <p class="service-description">Creating visually stunning and intuitive user interfaces that provide
-                        seamless user experiences across all devices.</p>
+                        seamless experiences across all devices. From concept to pixel-perfect implementation.</p>
                     <ul class="service-features">
-                        <li>Responsive Web Design</li>
-                        <li>Interactive Prototypes</li>
-                        <li>User Experience Research</li>
-                        <li>Modern CSS & Animations</li>
+                        <li><i class="fas fa-check"></i> Responsive Web Design</li>
+                        <li><i class="fas fa-check"></i> Interactive Prototypes</li>
+                        <li><i class="fas fa-check"></i> User Experience Research</li>
+                        <li><i class="fas fa-check"></i> Modern CSS & Animations</li>
+                        <li><i class="fas fa-check"></i> Cross-browser Compatibility</li>
                     </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">📐</div>
-                    <h3 class="service-title">Graphic Design</h3>
-                    <p class="service-description">Designing compelling visual assets that communicate your brand
-                        message effectively and leave lasting impressions.</p>
+                <div class="service-category-card fade-in-up">
+                    <div class="service-icon-large">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Full Stack Development</h3>
+                    <p class="service-description">End-to-end web application development using modern technologies like React, Node.js, Spring Boot, and databases. Scalable and maintainable solutions.</p>
                     <ul class="service-features">
-                        <li>Logo & Brand Identity</li>
-                        <li>Social Media Graphics</li>
-                        <li>Print & Digital Materials</li>
-                        <li>Illustration & Icons</li>
+                        <li><i class="fas fa-check"></i> Custom Web Applications</li>
+                        <li><i class="fas fa-check"></i> RESTful API Development</li>
+                        <li><i class="fas fa-check"></i> Database Design & Integration</li>
+                        <li><i class="fas fa-check"></i> Authentication & Security</li>
+                        <li><i class="fas fa-check"></i> Cloud Deployment</li>
                     </ul>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🎬</div>
-                    <h3 class="service-title">Video Editing</h3>
-                    <p class="service-description">Professional video editing services that transform raw footage into
-                        engaging content for various platforms and purposes.</p>
+                <div class="service-category-card fade-in-up">
+                    <div class="service-icon-large">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="service-title">Graphic & Video Design</h3>
+                    <p class="service-description">Professional design services for branding, marketing materials, and video content that captures attention and communicates your message effectively.</p>
                     <ul class="service-features">
-                        <li>Social Media Reels</li>
-                        <li>Promotional Videos</li>
-                        <li>Motion Graphics</li>
-                        <li>Color Grading & Effects</li>
+                        <li><i class="fas fa-check"></i> Logo & Brand Identity</li>
+                        <li><i class="fas fa-check"></i> Social Media Graphics</li>
+                        <li><i class="fas fa-check"></i> Video Editing & Motion Graphics</li>
+                        <li><i class="fas fa-check"></i> Promotional Materials</li>
+                        <li><i class="fas fa-check"></i> Color Grading & Effects</li>
                     </ul>
                 </div>
             </div>
 
-            <div class="cta-section">
-                <h2 class="cta-title">Ready to Transform Your Vision?</h2>
-                <p class="cta-text">Let's collaborate to bring your ideas to life with exceptional design and
-                    development that sets you apart from the competition.</p>
-                <div class="cta-buttons">
-                    <a href="#Contact-Me" class="cta-button primary">Start Your Project</a>
-                    <a href="#Projects" class="cta-button secondary">View My Work</a>
+            <!-- Pricing Packages -->
+            <div class="pricing-header">
+                <h2 class="pricing-title">Flexible Pricing Plans</h2>
+                <p class="pricing-subtitle">Choose the package that best fits your project needs</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Basic Package -->
+                <div class="pricing-card fade-in-up">
+                    <div class="pricing-badge">Basic</div>
+                    <h3 class="pricing-package-title">Static Website</h3>
+                    <div class="pricing-price">
+                        <span class="currency">₹</span>
+                        <span class="amount">8,000</span>
+                        <span class="period">Starting from</span>
+                    </div>
+                    <p class="pricing-description">Perfect for personal portfolios, landing pages, and simple business websites</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Up to 5 pages</li>
+                        <li><i class="fas fa-check-circle"></i> Responsive design</li>
+                        <li><i class="fas fa-check-circle"></i> Contact form integration</li>
+                        <li><i class="fas fa-check-circle"></i> Basic SEO optimization</li>
+                        <li><i class="fas fa-check-circle"></i> 2 rounds of revisions</li>
+                        <li><i class="fas fa-check-circle"></i> 1 month support</li>
+                    </ul>
+                    <a href="#Contact-Me" class="pricing-cta">Get Started</a>
+                </div>
+
+                <!-- Standard Package -->
+                <div class="pricing-card featured fade-in-up">
+                    <div class="pricing-badge popular">Most Popular</div>
+                    <h3 class="pricing-package-title">Dynamic Website</h3>
+                    <div class="pricing-price">
+                        <span class="currency">₹</span>
+                        <span class="amount">25,000</span>
+                        <span class="period">Starting from</span>
+                    </div>
+                    <p class="pricing-description">Ideal for businesses needing interactive features and content management</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Up to 15 pages</li>
+                        <li><i class="fas fa-check-circle"></i> Custom design & animations</li>
+                        <li><i class="fas fa-check-circle"></i> CMS integration</li>
+                        <li><i class="fas fa-check-circle"></i> Database integration</li>
+                        <li><i class="fas fa-check-circle"></i> Admin dashboard</li>
+                        <li><i class="fas fa-check-circle"></i> Advanced SEO & Analytics</li>
+                        <li><i class="fas fa-check-circle"></i> 4 rounds of revisions</li>
+                        <li><i class="fas fa-check-circle"></i> 3 months support</li>
+                    </ul>
+                    <a href="#Contact-Me" class="pricing-cta">Get Started</a>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="pricing-card fade-in-up">
+                    <div class="pricing-badge">Premium</div>
+                    <h3 class="pricing-package-title">Full Stack Application</h3>
+                    <div class="pricing-price">
+                        <span class="currency">₹</span>
+                        <span class="amount">50,000</span>
+                        <span class="period">Starting from</span>
+                    </div>
+                    <p class="pricing-description">Complete solution for e-commerce, SaaS, and complex web applications</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check-circle"></i> Unlimited pages</li>
+                        <li><i class="fas fa-check-circle"></i> Custom full-stack development</li>
+                        <li><i class="fas fa-check-circle"></i> E-commerce functionality</li>
+                        <li><i class="fas fa-check-circle"></i> Payment gateway integration</li>
+                        <li><i class="fas fa-check-circle"></i> User authentication & roles</li>
+                        <li><i class="fas fa-check-circle"></i> API development</li>
+                        <li><i class="fas fa-check-circle"></i> Cloud deployment & hosting</li>
+                        <li><i class="fas fa-check-circle"></i> Unlimited revisions</li>
+                        <li><i class="fas fa-check-circle"></i> 6 months support</li>
+                    </ul>
+                    <a href="#Contact-Me" class="pricing-cta">Get Started</a>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="services-cta-section">
+                <div class="cta-content">
+                    <h2 class="cta-title">Need a Custom Solution?</h2>
+                    <p class="cta-text">Every project is unique. Let's discuss your specific requirements and create a tailored package that perfectly fits your needs and budget.</p>
+                    <div class="cta-buttons-row">
+                        <a href="#Contact-Me" class="cta-button primary">
+                            <i class="fas fa-comments"></i> Schedule a Consultation
+                        </a>
+                        <a href="#Projects" class="cta-button secondary">
+                            <i class="fas fa-folder-open"></i> View My Work
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -842,6 +1075,14 @@
             </div>
         </section>
     </main>
+    
+    <!-- Floating CTA Button for Mobile -->
+    <div class="floating-cta">
+        <a href="#Contact-Me" class="floating-cta-btn" aria-label="Hire Me">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+    
     <footer class="modern-footer">
         <div class="footer-container">
             <!-- Appreciation Section -->
@@ -895,6 +1136,7 @@
     </footer>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="app.js"></script>
+    <script src="enhanced.js"></script>
 </body>
 
 </html>
