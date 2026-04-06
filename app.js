@@ -683,17 +683,6 @@ const socialIcons = document.querySelectorAll('.social-icon');
             }
         });
         
-        // Animation on scroll
-        document.addEventListener('DOMContentLoaded', () => {
-            const animatedElements = document.querySelectorAll('.animate');
-            
-            animatedElements.forEach(el => {
-                setTimeout(() => {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                }, parseInt(el.style.animationDelay) * 1000);
-            });
-        });
  // Tab switching functionality
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabContents = document.querySelectorAll('.tab-content');
@@ -713,32 +702,333 @@ const socialIcons = document.querySelectorAll('.social-icon');
             });
         });
 
-        // Add intersection observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        /* =================================
+   ENHANCED PORTFOLIO JAVASCRIPT
+   Scroll animations, case study modals,
+   and interactive features
+   ================================= */
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+// Scroll Animation Observer
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize scroll animations
+    initScrollAnimations();
+    
+    // Initialize case study modals
+    initCaseStudyModals();
+    
+    // Initialize floating CTA visibility
+    initFloatingCTA();
+    
+    // Initialize skills category filtering
+    initSkillsFilter();
+});
 
-        // Observe project cards for staggered animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const projectCards = document.querySelectorAll('.project-card');
-            projectCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-                observer.observe(card);
-            });
+// Scroll Animations
+function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in, .slide-in-left, .slide-in-right');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
         });
-         
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+}
 
+// Case Study Modal Functions
+function initCaseStudyModals() {
+    // Add event listeners to "View Case Study" buttons
+    const caseStudyButtons = document.querySelectorAll('.view-case-study');
+    
+    caseStudyButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const projectId = this.getAttribute('data-project');
+            openCaseStudy(projectId);
+        });
+    });
+    
+    // Close modal when clicking the close button or outside the modal
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('case-study-close') || 
+            e.target.classList.contains('case-study-modal')) {
+            closeCaseStudy();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeCaseStudy();
+        }
+    });
+}
 
+function openCaseStudy(projectId) {
+    const modal = document.getElementById(`case-study-${projectId}`);
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeCaseStudy() {
+    const modals = document.querySelectorAll('.case-study-modal.active');
+    modals.forEach(modal => {
+        modal.classList.remove('active');
+    });
+    document.body.style.overflow = '';
+}
+
+// Floating CTA Button
+function initFloatingCTA() {
+    const floatingCTA = document.querySelector('.floating-cta');
+    if (!floatingCTA) return;
+    
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
         
+        // Show floating CTA after scrolling 300px
+        if (currentScroll > 300) {
+            floatingCTA.style.display = 'block';
+        } else {
+            floatingCTA.style.display = 'none';
+        }
+        
+        lastScroll = currentScroll;
+    });
+}
+
+// Skills Category Filtering
+function initSkillsFilter() {
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const skillGroups = document.querySelectorAll('.skill-category-group');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.getAttribute('data-category');
+            
+            // Update active button
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter skill groups
+            if (category === 'all') {
+                skillGroups.forEach(group => {
+                    group.classList.remove('hidden');
+                });
+            } else {
+                skillGroups.forEach(group => {
+                    if (group.getAttribute('data-category') === category) {
+                        group.classList.remove('hidden');
+                    } else {
+                        group.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    });
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+    });
+});
+
+// Add hover effects to project cards
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-8px)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+    });
+});
+
+// Enhanced form validation (if contact form exists)
+const contactForm = document.querySelector('#contact-form');
+if (contactForm) {
+    // Real-time validation
+    const formInputs = contactForm.querySelectorAll('input, textarea');
+    formInputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+            if (this.classList.contains('error')) {
+                validateField(this);
+            }
+        });
+    });
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validate all fields
+        let isValid = true;
+        const requiredFields = contactForm.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+            if (!validateField(field)) {
+                isValid = false;
+            }
+        });
+        
+        if (isValid) {
+            // Get form data
+            const formData = new FormData(this);
+            const submitBtn = this.querySelector('.submit-btn');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending...</span>';
+            
+            // Simulate form submission (replace with actual API call)
+            setTimeout(() => {
+                // Show success message
+                showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+                
+                // Reset form
+                this.reset();
+                
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Send Message</span>';
+            }, 1500);
+        } else {
+            showNotification('Please fill in all required fields correctly.', 'error');
+        }
+    });
+}
+
+function validateField(field) {
+    const fieldId = field.id;
+    const errorElement = document.getElementById(`${fieldId}-error`);
+    let isValid = true;
+    let errorMessage = '';
+    
+    // Remove previous error state
+    field.classList.remove('error');
+    if (errorElement) {
+        errorElement.classList.remove('show');
+    }
+    
+    // Check if field is required and empty
+    if (field.hasAttribute('required') && !field.value.trim()) {
+        isValid = false;
+        errorMessage = 'This field is required';
+    }
+    
+    // Email validation
+    if (field.type === 'email' && field.value.trim()) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(field.value)) {
+            isValid = false;
+            errorMessage = 'Please enter a valid email address';
+        }
+    }
+    
+    // Phone validation (optional but if filled, must be valid)
+    if (field.type === 'tel' && field.value.trim()) {
+        const phoneRegex = /^[\d\s\+\-\(\)]+$/;
+        if (!phoneRegex.test(field.value) || field.value.replace(/\D/g, '').length < 10) {
+            isValid = false;
+            errorMessage = 'Please enter a valid phone number';
+        }
+    }
+    
+    // Display error if invalid
+    if (!isValid) {
+        field.classList.add('error');
+        if (errorElement) {
+            errorElement.textContent = errorMessage;
+            errorElement.classList.add('show');
+        }
+    }
+    
+    return isValid;
+}
+
+// Notification function
+function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.textContent = message;
+    
+    const bgColor = type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#6366f1';
+    
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 1rem 1.5rem;
+        background: ${bgColor};
+        color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 10000;
+        animation: slideInRight 0.3s ease-out;
+        max-width: 400px;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.3s ease-out';
+        setTimeout(() => {
+            notification.remove();
+        }, 300);
+    }, 4000);
+}
+
+// Add slide animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideOutRight {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
